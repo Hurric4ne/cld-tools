@@ -22,19 +22,27 @@
 
 <script>
 import { computed } from 'vue'
-import { useItemStore } from '@/stores/useItemStore'
-import itemPricesAll from '@/assets/itemPricesAll.json' // Import the original JSON data
-import terminals from '@/assets/terminals.json' // Import terminals JSON
+import { useItemStore } from '@/stores/useItemStore';
 
 export default {
   name: 'TerminalList',
-  setup() {
+  props: {
+    terminals: {
+      type: Array,
+      required: true,
+    },
+    items: {
+      type: Array,
+      required: true,
+    },
+  },
+  setup(props) {
     const itemStore = useItemStore() // Access the store
 
-    // Create a complete list of items based on the original JSON and the store's selectedItems
+    // Create a complete list of items based on the original Data and the store's selectedItems
     const detailedSelectedItems = computed(() => {
       const selectedNames = itemStore.selectedItems.map(item => item.item_name)
-      return itemPricesAll.data.filter(item =>
+      return props.items.filter(item =>
         selectedNames.includes(item.item_name),
       ).filter(item => item.price_buy > 0)
     })
@@ -106,7 +114,7 @@ export default {
 
     // Get the terminal name based on the ID
     const getTerminalName = id_terminal => {
-      const terminal = terminals.data.find(
+      const terminal = props.terminals.find(
         term => term.id === parseInt(id_terminal),
       )
       return terminal ? terminal.name : 'Unknown Terminal'

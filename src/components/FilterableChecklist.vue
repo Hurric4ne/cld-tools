@@ -46,8 +46,6 @@
 </template>
 
 <script>
-import itemCategories from '@/assets/itemCategories.json' // Directly import categories JSON
-import itemPricesAll from '@/assets/itemPricesAll.json' // Directly import prices JSON
 import { ref, reactive, computed } from 'vue'
 import { useItemStore } from '@/stores/useItemStore' // Import the Pinia store
 import ThemedButton from '@/components/ThemedButton.vue'
@@ -57,14 +55,22 @@ export default {
   components: {
     ThemedButton,
   },
-  setup() {
+  props: {
+    categories: {
+      type: Array,
+      required: true,
+    },
+    items: {
+      type: Array,
+      required: true,
+    },
+  },
+  setup(props) {
     const itemStore = useItemStore() // Access the store
 
     const selectedCategories = ref([]) // Track selected categories
     const expandedSections = reactive(new Set()) // Track expanded sections
-
-    // Items data directly from imported JSON
-    const categoriesData = ref(itemCategories.data)
+    const categoriesData = ref(props.categories)
 
     // Group categories by section
     const groupedCategories = computed(() => {
@@ -100,8 +106,8 @@ export default {
     const fetchItems = () => {
       const selectedCategoryIds = selectedCategories.value.map(cat => cat.id)
 
-      // Filter items from itemPricesAll.json based on selected category IDs and price_buy > 0
-      const newItems = itemPricesAll.data.filter(
+      // Filter items based on selected category IDs and price_buy > 0
+      const newItems = props.items.filter(
         item =>
           selectedCategoryIds.includes(item.id_category) && item.price_buy > 0,
       )
