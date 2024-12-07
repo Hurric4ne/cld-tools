@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Title -->
-    <h1 class="title">Filterable Checklist</h1>
+    <h1 class="title">Shopping-List</h1>
 
     <!-- Loader -->
     <div v-if="isLoading" class="loader-overlay">

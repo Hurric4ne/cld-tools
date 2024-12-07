@@ -157,7 +157,7 @@ export default {
   padding: 20px;
 
   h3 {
-    color: var(--color-red);
+    color: var(--color-white);
     font-weight: bold;
     text-align: center;
     margin-top: 0;
