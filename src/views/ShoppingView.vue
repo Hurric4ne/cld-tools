@@ -10,28 +10,24 @@
 
     <!-- Content (only shown after data is loaded) -->
     <div v-else>
-      <FilterableChecklist :categories="categories" :items="items" />
-      <ItemSearchList />
+      <ItemSearchList :items="items" />
       <TerminalList :terminals="terminals" :items="items" />
     </div>
   </div>
 </template>
 
 <script>
-import FilterableChecklist from '@/components/FilterableChecklist.vue';
 import ItemSearchList from '@/components/ItemSearchList.vue';
 import TerminalList from '@/components/TerminalList.vue';
 import { ref, onMounted } from 'vue';
 
 export default {
   components: {
-    FilterableChecklist,
     ItemSearchList,
     TerminalList,
   },
   setup() {
     // Reactive data states
-    const categories = ref([]);
     const items = ref([]);
     const terminals = ref([]);
     const orbitDistances = ref([]);
@@ -39,7 +35,6 @@ export default {
 
     const fetchAllData = async () => {
       const endpoints = {
-        categories: 'https://uexcorp.space/api/2.0/categories?type=item',
         items: 'https://uexcorp.space/api/2.0/items_prices_all',
         terminals: 'https://uexcorp.space/api/2.0/terminals?type=item',
         orbit_distances: 'https://uexcorp.space/api/2.0/orbits_distances?id_star_system=68',
@@ -52,21 +47,18 @@ export default {
           return result.data;
         };
 
-        const [fetchedCategories, fetchedItems, fetchedTerminals, fetchedOrbitDistances] = await Promise.all([
-          fetchData(endpoints.categories),
+        const [fetchedItems, fetchedTerminals, fetchedOrbitDistances] = await Promise.all([
           fetchData(endpoints.items),
           fetchData(endpoints.terminals),
           fetchData(endpoints.orbit_distances),
         ]);
 
         // Update reactive states
-        categories.value = fetchedCategories;
         items.value = fetchedItems;
         terminals.value = fetchedTerminals;
         orbitDistances.value = fetchedOrbitDistances;
 
         // Cache the data in localStorage
-        localStorage.setItem('categories', JSON.stringify(fetchedCategories));
         localStorage.setItem('items', JSON.stringify(fetchedItems));
         localStorage.setItem('terminals', JSON.stringify(fetchedTerminals));
         localStorage.setItem('orbit_distances', JSON.stringify(fetchedOrbitDistances));
@@ -86,7 +78,6 @@ export default {
         await fetchAllData();
       } else {
         // Load cached data from localStorage
-        categories.value = JSON.parse(localStorage.getItem('categories')) || [];
         items.value = JSON.parse(localStorage.getItem('items')) || [];
         terminals.value = JSON.parse(localStorage.getItem('terminals')) || [];
         orbitDistances.value = JSON.parse(localStorage.getItem('orbit_distances')) || [];
@@ -97,7 +88,6 @@ export default {
 
     return {
       isLoading,
-      categories,
       items,
       terminals,
     };

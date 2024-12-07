@@ -1,7 +1,7 @@
 <template>
   <div
     class="item-search-list"
-    :class="{ 'is-disabled': !itemStore.items.length }"
+    :class="{ 'is-disabled': !$props.items.length }"
   >
     <h3>Search Items from filtered Categories</h3>
     <input
@@ -10,7 +10,7 @@
       @input="handleInput"
       placeholder="Search items..."
       class="search-bar"
-      :disabled="!itemStore.items.length"
+      :disabled="!$props.items.length"
     />
 
     <ul class="item-list">
@@ -30,14 +30,14 @@
     <div class="button-container">
       <!-- Submit Button -->
       <ThemedButton
-        :disabled="!itemStore.items.length || !selectedItems.length"
+        :disabled="!$props.items.length || !selectedItems.length"
         @click="updateStoredItems"
       >
         Submit List
       </ThemedButton>
       <!-- Reset Button -->
       <ThemedButton
-        :disabled="!itemStore.items.length || !selectedItems.length"
+        :disabled="!$props.items.length || !selectedItems.length"
         @click="resetStoredItems"
       >
         Reset List
@@ -56,61 +56,79 @@ export default {
   components: {
     ThemedButton,
   },
-  setup() {
-    const itemStore = useItemStore() // Access the store
-
-    const searchQuery = ref('')
-    const debouncedQuery = ref('')
-    const selectedItems = ref([]) // To hold full item details
-    let debounceTimeout = null
-
-    const handleInput = () => {
-      clearTimeout(debounceTimeout)
-      debounceTimeout = setTimeout(() => {
-        debouncedQuery.value = searchQuery.value // Update the debounced value after 1 second
-      }, 1000)
-    }
-
-    const filteredItems = computed(() => {
-      if (debouncedQuery.value.trim() === '') {
-        return itemStore.items.filter(item =>
-          selectedItems.value.some(
-            selected => selected.item_name === item.item_name,
-          ),
-        )
-      }
-      return itemStore.items.filter(item => {
-        return item.item_name
-          .toLowerCase()
-          .includes(debouncedQuery.value.toLowerCase())
-      })
-    })
-
-    const updateStoredItems = () => {
-      // Update the store with full item objects based on selected item names
-      const selectedFullItems = itemStore.items.filter(item =>
-        selectedItems.value.includes(item.item_name),
-      )
-      itemStore.setSelectedItems(selectedFullItems)
-    }
-
-    const resetStoredItems = () => {
-      selectedItems.value = [] // Clear selected items
-      searchQuery.value = '' // Clear the search bar
-      debouncedQuery.value = '' // Clear the debounced value
-      itemStore.clearSelectedItems() // Clear the selected items in the store
-    }
-
-    return {
-      itemStore, // Expose the store to the template
-      searchQuery,
-      selectedItems,
-      filteredItems,
-      handleInput,
-      updateStoredItems,
-      resetStoredItems,
+  props: {
+    items: {
+      type: Array,
+      required: true
     }
   },
+  setup(props) {
+  const itemStore = useItemStore(); // Access the store
+
+  const searchQuery = ref('');
+  const debouncedQuery = ref('');
+  const selectedItems = ref([]); // To hold full item details
+  let debounceTimeout = null;
+
+  // Filter props.items to ensure only unique items are used
+  const uniqueItems = computed(() => {
+    const seen = new Set();
+    return props.items.filter((item) => {
+      if (seen.has(item.item_name)) {
+        return false;
+      }
+      seen.add(item.item_name);
+      return true;
+    });
+  });
+
+  const handleInput = () => {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      debouncedQuery.value = searchQuery.value; // Update the debounced value after 1 second
+    }, 1000);
+  };
+
+  const filteredItems = computed(() => {
+    if (debouncedQuery.value.trim() === '') {
+      return uniqueItems.value.filter((item) =>
+        selectedItems.value.some(
+          (selected) => selected.item_name === item.item_name,
+        ),
+      );
+    }
+    return uniqueItems.value.filter((item) => {
+      return item.item_name
+        .toLowerCase()
+        .includes(debouncedQuery.value.toLowerCase());
+    });
+  });
+
+  const updateStoredItems = () => {
+    // Update the store with full item objects based on selected item names
+    const selectedFullItems = uniqueItems.value.filter((item) =>
+      selectedItems.value.includes(item.item_name),
+    );
+    itemStore.setSelectedItems(selectedFullItems);
+  };
+
+  const resetStoredItems = () => {
+    selectedItems.value = []; // Clear selected items
+    searchQuery.value = ''; // Clear the search bar
+    debouncedQuery.value = ''; // Clear the debounced value
+    itemStore.clearSelectedItems(); // Clear the selected items in the store
+  };
+
+  return {
+    itemStore, // Expose the store to the template
+    searchQuery,
+    selectedItems,
+    filteredItems,
+    handleInput,
+    updateStoredItems,
+    resetStoredItems,
+  };
+}
 }
 </script>
 
