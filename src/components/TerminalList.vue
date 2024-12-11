@@ -4,7 +4,7 @@
     <ul v-if="sortedTerminals.length">
       <li class="terminal" v-for="(terminal, index) in sortedTerminals" :key="index">
         <strong>
-          {{ getTerminalName(terminal.id_terminal) }} ({{
+          {{ getTerminalStarSystem(terminal.id_terminal) }} | {{ getTerminalName(terminal.id_terminal) }} ({{
             terminal.items.length
           }}
           item{{ terminal.items.length > 1 ? 's' : '' }})
@@ -73,6 +73,37 @@ export default {
       const result = [];
       const processedTerminals = new Set();
 
+      // Find the starting terminal by matching the id_terminal with the id from props.terminals
+      const startingTerminal = groupedItems.value.find(terminal => {
+        const matchedTerminal = props.terminals.find(term => {
+          const location = userStore.startingLocation.toLowerCase();
+          return (
+            term.id === parseInt(terminal.id_terminal) && // Ensure matching by terminal id
+            (term.space_station_name?.toLowerCase().includes(location) ||
+              term.city_name?.toLowerCase().includes(location))
+          );
+        });
+        return !!matchedTerminal; // Return true if a match is found
+      });
+
+      if (startingTerminal) {
+        const filteredItems = startingTerminal.items.filter(item =>
+          remainingItems.has(item.item_name),
+        );
+
+        if (filteredItems.length > 0) {
+          result.push({
+            id_terminal: startingTerminal.id_terminal,
+            items: filteredItems,
+          });
+
+          // Mark items as processed
+          filteredItems.forEach(item => remainingItems.delete(item.item_name));
+          processedTerminals.add(startingTerminal.id_terminal);
+        }
+      }
+
+      // Then, apply the original logic for the remaining items
       while (remainingItems.size > 0) {
         let bestTerminal = null;
         let maxUniqueItems = 0;
@@ -120,9 +151,18 @@ export default {
       return terminal ? terminal.name : 'Unknown Terminal'
     }
 
+    // Get the terminal's star system based on the ID
+    const getTerminalStarSystem = id_terminal => {
+      const terminal = props.terminals.find(
+        term => term.id === parseInt(id_terminal),
+      )
+      return terminal ? terminal.star_system_name : 'Unknown Star System'
+    }
+
     return {
       sortedTerminals,
       getTerminalName,
+      getTerminalStarSystem
     }
   },
 }

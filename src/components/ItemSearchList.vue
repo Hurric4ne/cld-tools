@@ -16,7 +16,7 @@
 
     <div class="button-container">
       <select v-model="startingLocation" class="starting-location">
-        <option value="" selected disabled>Select a Starting Location</option>
+        <option value="" selected disabled>Starting Location (optional)</option>
         <template v-for="city in cities" :key="city.id">
           <option :value="city.name">
             {{ city.name }}
