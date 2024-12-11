@@ -1,26 +1,13 @@
 <template>
-  <div
-    class="item-search-list"
-    :class="{ 'is-disabled': !$props.items.length }"
-  >
+  <div class="item-search-list" :class="{ 'is-disabled': !$props.items.length }">
     <h3>Search Items from filtered Categories</h3>
-    <input
-      type="text"
-      v-model="searchQuery"
-      @input="handleInput"
-      placeholder="Search items..."
-      class="search-bar"
-      :disabled="!$props.items.length"
-    />
+    <input type="text" v-model="searchQuery" @input="handleInput" placeholder="Search items..." class="search-bar"
+      :disabled="!$props.items.length" />
 
     <ul class="item-list">
       <li v-for="item in filteredItems" :key="item.id" class="item">
         <label>
-          <input
-            type="checkbox"
-            v-model="selectedItems"
-            :value="item.item_name"
-          />
+          <input type="checkbox" v-model="selectedItems" :value="item.item_name" />
           {{ item.item_name }}
         </label>
       </li>
@@ -28,18 +15,20 @@
     </ul>
 
     <div class="button-container">
+      <select v-model="startingLocation" class="starting-location">
+        <option value="" selected disabled>Select a Starting Location</option>
+        <template v-for="station in stations" :key="station.id">
+          <option v-if="station.nickname !== 'PO' && station.nickname !== 'INS Jericho'" :value="station.name">
+            {{ station.nickname }}
+          </option>
+        </template>
+      </select>
       <!-- Submit Button -->
-      <ThemedButton
-        :disabled="!$props.items.length || !selectedItems.length"
-        @click="updateStoredItems"
-      >
+      <ThemedButton :disabled="!$props.items.length || !selectedItems.length" @click="updateStoredItems">
         Submit List
       </ThemedButton>
       <!-- Reset Button -->
-      <ThemedButton
-        :disabled="!$props.items.length || !selectedItems.length"
-        @click="resetStoredItems"
-      >
+      <ThemedButton :disabled="!$props.items.length || !selectedItems.length" @click="resetStoredItems">
         Reset List
       </ThemedButton>
     </div>
@@ -48,7 +37,7 @@
 
 <script>
 import { ref, computed } from 'vue'
-import { useItemStore } from '@/stores/useItemStore' // Import the item store
+import { useUserStore } from '@/stores/useUserStore' // Import the item store
 import ThemedButton from './ThemedButton.vue'
 
 export default {
@@ -60,75 +49,83 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    stations: {
+      type: Array,
+      required: true
     }
   },
   setup(props) {
-  const itemStore = useItemStore(); // Access the store
+    const userStore = useUserStore(); // Access the store
 
-  const searchQuery = ref('');
-  const debouncedQuery = ref('');
-  const selectedItems = ref([]); // To hold full item details
-  let debounceTimeout = null;
+    const startingLocation = ref('');
+    const searchQuery = ref('');
+    const debouncedQuery = ref('');
+    const selectedItems = ref([]); // To hold full item details
+    let debounceTimeout = null;
 
-  // Filter props.items to ensure only unique items are used
-  const uniqueItems = computed(() => {
-    const seen = new Set();
-    return props.items.filter((item) => {
-      if (seen.has(item.item_name)) {
-        return false;
+    // Filter props.items to ensure only unique items are used
+    const uniqueItems = computed(() => {
+      const seen = new Set();
+      return props.items.filter((item) => {
+        if (seen.has(item.item_name)) {
+          return false;
+        }
+        seen.add(item.item_name);
+        return true;
+      });
+    });
+
+    const handleInput = () => {
+      clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(() => {
+        debouncedQuery.value = searchQuery.value; // Update the debounced value after 1 second
+      }, 1000);
+    };
+
+    const filteredItems = computed(() => {
+      if (debouncedQuery.value.trim() === '') {
+        return uniqueItems.value.filter((item) =>
+          selectedItems.value.some(
+            (selected) => selected.item_name === item.item_name,
+          ),
+        );
       }
-      seen.add(item.item_name);
-      return true;
+      return uniqueItems.value.filter((item) => {
+        return item.item_name
+          .toLowerCase()
+          .includes(debouncedQuery.value.toLowerCase());
+      });
     });
-  });
 
-  const handleInput = () => {
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => {
-      debouncedQuery.value = searchQuery.value; // Update the debounced value after 1 second
-    }, 1000);
-  };
-
-  const filteredItems = computed(() => {
-    if (debouncedQuery.value.trim() === '') {
-      return uniqueItems.value.filter((item) =>
-        selectedItems.value.some(
-          (selected) => selected.item_name === item.item_name,
-        ),
+    const updateStoredItems = () => {
+      // Update the store with full item objects based on selected item names
+      const selectedFullItems = uniqueItems.value.filter((item) =>
+        selectedItems.value.includes(item.item_name),
       );
-    }
-    return uniqueItems.value.filter((item) => {
-      return item.item_name
-        .toLowerCase()
-        .includes(debouncedQuery.value.toLowerCase());
-    });
-  });
+      userStore.setSelectedItems(selectedFullItems);
+      userStore.setStartingLocation(startingLocation.value);
+    };
 
-  const updateStoredItems = () => {
-    // Update the store with full item objects based on selected item names
-    const selectedFullItems = uniqueItems.value.filter((item) =>
-      selectedItems.value.includes(item.item_name),
-    );
-    itemStore.setSelectedItems(selectedFullItems);
-  };
+    const resetStoredItems = () => {
+      selectedItems.value = []; // Clear selected items
+      searchQuery.value = ''; // Clear the search bar
+      debouncedQuery.value = ''; // Clear the debounced value
+      userStore.clearSelectedItems(); // Clear the selected items in the store
+      userStore.clearStartingLocation();
+    };
 
-  const resetStoredItems = () => {
-    selectedItems.value = []; // Clear selected items
-    searchQuery.value = ''; // Clear the search bar
-    debouncedQuery.value = ''; // Clear the debounced value
-    itemStore.clearSelectedItems(); // Clear the selected items in the store
-  };
-
-  return {
-    itemStore, // Expose the store to the template
-    searchQuery,
-    selectedItems,
-    filteredItems,
-    handleInput,
-    updateStoredItems,
-    resetStoredItems,
-  };
-}
+    return {
+      userStore, // Expose the store to the template
+      startingLocation,
+      searchQuery,
+      selectedItems,
+      filteredItems,
+      handleInput,
+      updateStoredItems,
+      resetStoredItems,
+    };
+  }
 }
 </script>
 
@@ -159,8 +156,10 @@ export default {
   .item-list {
     list-style: none;
     padding: 5px 0;
-    max-height: 300px; /* Set the max height for scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 300px;
+    /* Set the max height for scrolling */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
     border-top: 1px solid var(--color-lightgray);
     border-bottom: 1px solid var(--color-lightgray);
   }
@@ -181,8 +180,12 @@ export default {
   .button-container {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
-    column-gap: 100px;
+    justify-content: flex-start;
+    column-gap: 50px;
+  }
+
+  .starting-location {
+    min-width: 300px;
   }
 }
 </style>

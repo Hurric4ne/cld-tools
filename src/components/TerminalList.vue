@@ -22,7 +22,7 @@
 
 <script>
 import { computed } from 'vue'
-import { useItemStore } from '@/stores/useItemStore';
+import { useUserStore } from '@/stores/useUserStore';
 
 export default {
   name: 'TerminalList',
@@ -37,11 +37,11 @@ export default {
     },
   },
   setup(props) {
-    const itemStore = useItemStore() // Access the store
+    const userStore = useUserStore() // Access the store
 
     // Create a complete list of items based on the original Data and the store's selectedItems
     const detailedSelectedItems = computed(() => {
-      const selectedNames = itemStore.selectedItems.map(item => item.item_name)
+      const selectedNames = userStore.selectedItems.map(item => item.item_name)
       return props.items.filter(item =>
         selectedNames.includes(item.item_name),
       ).filter(item => item.price_buy > 0)
