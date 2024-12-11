@@ -17,7 +17,12 @@
     <div class="button-container">
       <select v-model="startingLocation" class="starting-location">
         <option value="" selected disabled>Select a Starting Location</option>
-        <template v-for="station in stations" :key="station.id">
+        <template v-for="city in cities" :key="city.id">
+          <option :value="city.name">
+            {{ city.name }}
+          </option>
+        </template>
+        <template v-for="station in sortedStations" :key="station.id">
           <option v-if="station.nickname !== 'PO' && station.nickname !== 'INS Jericho'" :value="station.name">
             {{ station.nickname }}
           </option>
@@ -53,6 +58,10 @@ export default {
     stations: {
       type: Array,
       required: true
+    },
+    cities: {
+      type: Array,
+      required: true
     }
   },
   setup(props) {
@@ -63,6 +72,13 @@ export default {
     const debouncedQuery = ref('');
     const selectedItems = ref([]); // To hold full item details
     let debounceTimeout = null;
+
+    // Sort props.stations
+    const sortedStations = computed(() => {
+      return [...props.stations].sort((a, b) => {
+        return a.is_lagrange === b.is_lagrange ? 0 : a.is_lagrange === 0 ? -1 : 1;
+      });
+    });
 
     // Filter props.items to ensure only unique items are used
     const uniqueItems = computed(() => {
@@ -117,6 +133,7 @@ export default {
 
     return {
       userStore, // Expose the store to the template
+      sortedStations,
       startingLocation,
       searchQuery,
       selectedItems,

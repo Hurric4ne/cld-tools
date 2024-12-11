@@ -7,12 +7,7 @@ const router = createRouter({
       path: '/',
       name: 'shopping-list',
       component: () => import('../views/ShoppingView.vue'),
-    },
-    {
-      path: '/cargo-missions',
-      name: 'cargo-missions',
-      component: () => import('../views/CargoMissionView.vue'),
-    },
+    }
   ],
 })
 
