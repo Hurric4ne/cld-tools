@@ -15,8 +15,9 @@
     </ul>
 
     <div class="button-container">
-      <select v-model="startingLocation" class="starting-location">
-        <option value="" selected disabled>Starting Location (optional)</option>
+      <!-- disabled for now due to errors -->
+      <!-- <select v-model="startingLocation" class="starting-location">
+        <option value="" selected>Starting Location (optional)</option>
         <template v-for="city in cities" :key="city.id">
           <option :value="city.name">
             {{ city.name }}
@@ -27,7 +28,7 @@
             {{ station.nickname }}
           </option>
         </template>
-      </select>
+      </select> -->
       <!-- Submit Button -->
       <ThemedButton :disabled="!$props.items.length || !selectedItems.length" @click="updateStoredItems">
         Submit List
