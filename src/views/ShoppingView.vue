@@ -129,9 +129,10 @@ export default {
 
 .uex-api-badge {
   position: fixed;
-  right: 25px;
+  right: 10px;
   bottom: 0;
-  width: 120px;
+  width: 100px;
+  font-size: 13px;
   display: flex;
   flex-direction: column;
   align-items: center;
