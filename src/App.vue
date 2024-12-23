@@ -16,6 +16,10 @@ import { RouterView } from 'vue-router'
 }
 
 body {
+  position: relative;
+  width: calc(100vw - 20px);
+  max-width: 1920px;
+  margin: 0 auto;
   font-family: 'Orbitron', serif;
   font-optical-sizing: auto;
   letter-spacing: 1px;

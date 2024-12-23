@@ -11,20 +11,24 @@
     <!-- Content (only shown after data is loaded) -->
     <div v-else>
       <ItemSearchList :stations="stations" :cities="cities" :items="items" />
+      <UserTerminalList :terminals="terminals" :items="items" />
       <TerminalList :terminals="terminals" :items="items" />
     </div>
   </div>
+  <p class="uex-api-badge">Powered by <img class="uex-logo" src="/uex-logo.svg" alt="UEX" draggable="false" /></p>
 </template>
 
 <script>
 import ItemSearchList from '@/components/ItemSearchList.vue';
 import TerminalList from '@/components/TerminalList.vue';
+import UserTerminalList from '@/components/UserTerminalList.vue';
 import { ref, onMounted } from 'vue';
 
 export default {
   components: {
     ItemSearchList,
     TerminalList,
+    UserTerminalList
   },
   setup() {
     // Reactive data states
@@ -32,7 +36,7 @@ export default {
     const terminals = ref([]);
     const stations = ref([]);
     const cities = ref([]);
-    const orbitDistances = ref([]);
+    // const orbitDistances = ref([]);
     const isLoading = ref(true);
 
     const fetchAllData = async () => {
@@ -41,7 +45,7 @@ export default {
         terminals: 'https://uexcorp.space/api/2.0/terminals?type=item',
         stations: 'https://uexcorp.space/api/2.0/space_stations?id_star_system=68',
         cities: 'https://uexcorp.space/api/2.0/cities?id_star_system=68',
-        orbit_distances: 'https://uexcorp.space/api/2.0/orbits_distances?id_star_system=68',
+        // orbit_distances: 'https://uexcorp.space/api/2.0/orbits_distances?id_star_system_origin=68',
       };
 
       try {
@@ -51,12 +55,12 @@ export default {
           return result.data;
         };
 
-        const [fetchedItems, fetchedTerminals, fetchedStations, fetchedCities, fetchedOrbitDistances] = await Promise.all([
+        const [fetchedItems, fetchedTerminals, fetchedStations, fetchedCities/**, fetchedOrbitDistances **/] = await Promise.all([
           fetchData(endpoints.items),
           fetchData(endpoints.terminals),
           fetchData(endpoints.stations),
           fetchData(endpoints.cities),
-          fetchData(endpoints.orbit_distances),
+          // fetchData(endpoints.orbit_distances),
         ]);
 
         // Update reactive states
@@ -64,14 +68,21 @@ export default {
         terminals.value = fetchedTerminals;
         stations.value = fetchedStations;
         cities.value = fetchedCities;
-        orbitDistances.value = fetchedOrbitDistances;
+        // orbitDistances.value = fetchedOrbitDistances;
+
+        // Remove data from localStorage
+        localStorage.removeItem('items');
+        localStorage.removeItem('terminals');
+        localStorage.removeItem('stations');
+        localStorage.removeItem('cities');
+        localStorage.removeItem('orbit_distances');
 
         // Cache the data in localStorage
         localStorage.setItem('items', JSON.stringify(fetchedItems));
         localStorage.setItem('terminals', JSON.stringify(fetchedTerminals));
         localStorage.setItem('stations', JSON.stringify(fetchedStations));
         localStorage.setItem('cities', JSON.stringify(fetchedCities));
-        localStorage.setItem('orbit_distances', JSON.stringify(fetchedOrbitDistances));
+        // localStorage.setItem('orbit_distances', JSON.stringify(fetchedOrbitDistances));
         const expirationTime = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
         localStorage.setItem('dataExpiration', expirationTime.toString());
       } catch (error) {
@@ -92,7 +103,7 @@ export default {
         terminals.value = JSON.parse(localStorage.getItem('terminals')) || [];
         stations.value = JSON.parse(localStorage.getItem('stations')) || [];
         cities.value = JSON.parse(localStorage.getItem('cities')) || [];
-        orbitDistances.value = JSON.parse(localStorage.getItem('orbit_distances')) || [];
+        // orbitDistances.value = JSON.parse(localStorage.getItem('orbit_distances')) || [];
         isLoading.value = false;
         console.log('Data loaded from localStorage');
       }
@@ -104,7 +115,7 @@ export default {
       terminals,
       stations,
       cities,
-      orbitDistances,
+      // orbitDistances,
     };
   },
 };
@@ -114,6 +125,17 @@ export default {
 .title {
   text-align: center;
   color: #fff;
+}
+
+.uex-api-badge {
+  position: fixed;
+  right: 25px;
+  bottom: 0;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
 }
 
 .loader-overlay {

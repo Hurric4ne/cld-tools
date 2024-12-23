@@ -56,7 +56,7 @@
         class="mission-item"
       >
         <h3>{{ mission.missionKey }}</h3>
-        <p><strong>Reward:</strong> {{ mission.missionReward.toLocaleString() }} aUEC</p>
+        <p><strong>Reward:</strong> {{ mission.missionReward ? mission.missionReward.toLocaleString() : "N/A" }} aUEC</p>
         <p><strong>Rank:</strong> {{ rankDisplayInfos[mission.reputationRequirements][0] }}</p>
         <p><strong>Max SCU Size:</strong> {{ mission.maxSCUSize }}</p>
         <p><strong>Cargo Amount:</strong> {{ mission.cargoAmount }}</p>
@@ -67,15 +67,15 @@
         </p>
         <p>
           <strong>Failure:</strong>
-          {{ mission.missionResultReputationRewards["outcome 2"].toLocaleString() }} Reputation
+          {{ mission.missionResultReputationRewards["outcome 2"] ? mission.missionResultReputationRewards["outcome 2"].toLocaleString() : 'N/A' }} Reputation
         </p>
         <p>
           <strong>Abandon:</strong>
-          {{ mission.missionResultReputationRewards["outcome 3"].toLocaleString() }} Reputation
+          {{ mission.missionResultReputationRewards["outcome 3"] ? mission.missionResultReputationRewards["outcome 3"].toLocaleString() : 'N/A' }} Reputation
         </p>
         <p class="success">
           <strong>Success:</strong>
-          {{ mission.missionResultReputationRewards["outcome 1"].toLocaleString() }} Reputation
+          {{ mission.missionResultReputationRewards["outcome 1"] ? mission.missionResultReputationRewards["outcome 1"].toLocaleString() : 'N/A' }} Reputation
           ({{ rankDisplayInfos[mission.reputationRequirements][1] }} to the next higher Rank)
         </p>
       </div>
@@ -84,13 +84,12 @@
 </template>
 
 <script>
-import { ref, reactive, computed } from "vue";
-import CARGODATA from "/src/assets/json/finalAggregatedData.json";
+import { reactive, computed } from "vue";
+import cargoData from "@/assets/json/finalAggregatedData.json";
 
 export default {
   name: "CargoMissions",
   setup() {
-    const missions = ref(CARGODATA);
     const filters = reactive({
       reputation: "",
       reward: 0,
@@ -113,14 +112,14 @@ export default {
     const cargoRouteOptions = ["Local", "Planetary", "Solar", "Interstellar"];
 
     const sortedMaxSCUSizes = computed(() => {
-      const uniqueSizes = new Set(missions.value.map((m) => m.maxSCUSize));
+      const uniqueSizes = new Set(cargoData.map((m) => m.maxSCUSize));
       let sizes = [...uniqueSizes].filter((size) => size !== "32SCU");
       sizes.push("32SCU");
       return sizes;
     });
 
     const filteredMissions = computed(() => {
-      return missions.value.filter((mission) => {
+      return cargoData.filter((mission) => {
         const matchReputation =
           !filters.reputation || mission.reputationRequirements === filters.reputation;
         const matchReward = !filters.reward || mission.missionReward >= filters.reward;
@@ -142,7 +141,7 @@ export default {
     });
 
     return {
-      missions,
+      cargoData,
       filters,
       rankDisplayInfos,
       cargoAmountOptions,

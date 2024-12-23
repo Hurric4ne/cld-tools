@@ -1,6 +1,6 @@
 <template>
   <div class="terminal-list">
-    <h3>Terminal List</h3>
+    <h3>Automatic Shopping List</h3>
     <ul v-if="sortedTerminals.length">
       <li class="terminal" v-for="(terminal, index) in sortedTerminals" :key="index">
         <strong>
@@ -16,7 +16,7 @@
         </ul>
       </li>
     </ul>
-    <p v-else>No selected items found.</p>
+    <p class="no-items" v-else>No Items selected.</p>
   </div>
 </template>
 
@@ -175,8 +175,8 @@ export default {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 1000px;
+  margin: 50px auto 20px;
 }
 
 h3 {
@@ -203,5 +203,10 @@ ul {
   margin-left: 10px;
   margin-bottom: 5px;
   list-style-type: disc;
+}
+
+.no-items {
+  font-weight: bold;
+  color: var(--color-red);
 }
 </style>

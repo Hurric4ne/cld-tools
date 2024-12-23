@@ -1,6 +1,6 @@
 <template>
   <div class="item-search-list" :class="{ 'is-disabled': !$props.items.length }">
-    <h3>Search Items from filtered Categories</h3>
+    <h3>Search through all available Items</h3>
     <input type="text" v-model="searchQuery" @input="handleInput" placeholder="Search items..." class="search-bar"
       :disabled="!$props.items.length" />
 
@@ -149,8 +149,7 @@ export default {
 
 <style scoped lang="scss">
 .item-search-list {
-  width: 100%;
-  max-width: 840px;
+  max-width: 1000px;
   margin: 40px auto;
   border: 1px solid var(--color-red);
   padding: 20px;
@@ -175,9 +174,7 @@ export default {
     list-style: none;
     padding: 5px 0;
     max-height: 300px;
-    /* Set the max height for scrolling */
     overflow-y: auto;
-    /* Enable vertical scrolling */
     border-top: 1px solid var(--color-lightgray);
     border-bottom: 1px solid var(--color-lightgray);
   }
