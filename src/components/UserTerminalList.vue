@@ -31,8 +31,12 @@
             </select>
           </td>
           <td>
-            {{ getPriceForItem(item.item_name, selectedTerminals[index]) }} aUEC
+            {{ formatNumber(getPriceForItem(item.item_name, selectedTerminals[index])) }}
           </td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="3" class="total-label">Total</td>
+          <td class="total-value">{{ formatNumber(getTotalCost()) }} aUEC</td>
         </tr>
       </tbody>
     </table>
@@ -41,7 +45,7 @@
 </template>
 
 <script>
-import { ref, computed, watch } from "vue";
+import { ref, computed } from "vue";
 import { useUserStore } from "@/stores/useUserStore";
 
 export default {
@@ -63,23 +67,15 @@ export default {
     const selectedItems = computed(() => userStore.selectedItems);
 
     // Reactive state for selected locations and terminals
-    const selectedLocations = ref(selectedItems.value.map(() => "")); // Default empty value for locations
-    const selectedTerminals = ref(selectedItems.value.map(() => "Select Terminal")); // Default to "Select Terminal"
-
-    // Watch for changes in selectedLocations and reset the corresponding Terminal value
-    watch(selectedLocations, (newLocations, oldLocations) => {
-      newLocations.forEach((newLocation, index) => {
-        if (newLocation !== oldLocations[index]) {
-          // Reset Terminal dropdown to "Select Terminal" when Location changes
-          selectedTerminals.value[index] = "Select Terminal";
-        }
-      });
-    });
+    const selectedLocations = ref(selectedItems.value.map(() => ""));
+    const selectedTerminals = ref(selectedItems.value.map(() => ""));
 
     // Function to find all terminals where an item can be bought and sort them by name
     const getTerminalsForItem = (itemName, selectedLocation) => {
       const terminals = props.items
-        .filter((item) => item.item_name === itemName)
+        .filter((item) =>
+          item.item_name === itemName && parseFloat(item.price_buy) > 0 // Exclude items with buy_price <= 0
+        )
         .map((item) => {
           const terminal = props.terminals.find((term) => term.id === parseInt(item.id_terminal));
           return terminal && (!selectedLocation || terminal.planet_name === selectedLocation) ? terminal.name : null;
@@ -104,17 +100,29 @@ export default {
 
     // Function to get the price of an item for a selected terminal
     const getPriceForItem = (itemName, selectedTerminal) => {
-      if (!selectedTerminal || selectedTerminal === "Select Terminal") return "N/A";
+      if (!selectedTerminal || selectedTerminal === "Select Terminal") return 0;
 
       // Find the terminal ID from the terminal name
       const terminal = props.terminals.find((term) => term.name === selectedTerminal);
-      if (!terminal) return "N/A";
+      if (!terminal) return 0;
 
       // Match the item and terminal in props.items
       const itemData = props.items.find(
         (item) => item.item_name === itemName && parseInt(item.id_terminal) === terminal.id
       );
-      return itemData ? itemData.price_buy : "N/A";
+      return itemData ? parseInt(itemData.price_buy, 10) : 0; // Ensure the price is an integer
+    };
+
+    // Function to calculate the total cost of selected items
+    const getTotalCost = () => {
+      return selectedItems.value.reduce((total, item, index) => {
+        return total + getPriceForItem(item.item_name, selectedTerminals.value[index]);
+      }, 0);
+    };
+
+    // Function to format numbers with thousand separators
+    const formatNumber = (number) => {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
 
     return {
@@ -124,6 +132,8 @@ export default {
       getTerminalsForItem,
       getLocationsForItem,
       getPriceForItem,
+      getTotalCost,
+      formatNumber,
     };
   },
 };
@@ -164,5 +174,17 @@ select {
 .no-items {
   font-weight: bold;
   color: var(--color-red);
+}
+
+.total-row {
+  font-weight: bold;
+}
+
+.total-label {
+  text-align: right;
+}
+
+.total-value {
+  text-align: left;
 }
 </style>
