@@ -41,11 +41,11 @@ export default {
 
     const fetchAllData = async () => {
       const endpoints = {
-        items: 'https://uexcorp.space/api/2.0/items_prices_all',
-        terminals: 'https://uexcorp.space/api/2.0/terminals?type=item',
-        stations: 'https://uexcorp.space/api/2.0/space_stations?id_star_system=68',
-        cities: 'https://uexcorp.space/api/2.0/cities?id_star_system=68',
-        // orbit_distances: 'https://uexcorp.space/api/2.0/orbits_distances?id_star_system_origin=68',
+        items: 'https://api.uexcorp.space/2.0/items_prices_all',
+        terminals: 'https://api.uexcorp.space/2.0/terminals?type=item',
+        stations: 'https://api.uexcorp.space/2.0/space_stations?id_star_system=68',
+        cities: 'https://api.uexcorp.space/2.0/cities?id_star_system=68',
+        // orbit_distances: 'https://api.uexcorp.space/2.0/orbits_distances?id_star_system_origin=68',
       };
 
       try {
