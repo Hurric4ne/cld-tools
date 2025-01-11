@@ -1,9 +1,24 @@
 <template>
-  <RouterView />
+  <div>
+    <nav>
+      <button @click="currentView = 'ShoppingView'">Shopping View</button>
+      <button @click="currentView = 'CargoMissionView'">Cargo Mission View</button>
+    </nav>
+    <section v-if="currentView === 'ShoppingView'">
+      <ShoppingView />
+    </section>
+    <section v-if="currentView === 'CargoMissionView'">
+      <CargoMissionView />
+    </section>
+  </div>
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router'
+import { ref } from 'vue';
+import ShoppingView from '@/views/ShoppingView.vue';
+import CargoMissionView from '@/views/CargoMissionView.vue';
+
+const currentView = ref('ShoppingView');
 </script>
 
 <style lang="scss">
@@ -27,5 +42,26 @@ body {
   font-style: normal;
   background-color: var(--color-darkgray);
   color: var(--color-white);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  button {
+    background-color: var(--color-lightgray);
+    color: var(--color-black);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: var(--color-red);
+      color: var(--color-white);
+    }
+  }
 }
 </style>

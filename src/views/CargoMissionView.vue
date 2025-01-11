@@ -44,6 +44,7 @@
     <div class="mission-list">
       <div v-for="mission in filteredMissions" :key="mission.internalName" class="mission-item">
         <h3>{{ mission.displayTitle }}</h3>
+        <p><strong>Location Amount:</strong> {{ getInternalNamePart(mission.internalName) }}</p>
         <p><strong>Reward:</strong> {{ mission.reward.toLocaleString() }}</p>
         <p><strong>Cargo Amount:</strong> {{ mission.cargoAmount }} (max. {{ mission.maxSCUSize }} Boxes)</p>
         <p><strong>Location:</strong> {{ mission.location }}</p>
@@ -52,6 +53,7 @@
         <ul class="reputation-list">
           <li v-for="rep in mission.reputation" :key="Object.keys(rep)[0]">
             {{ Object.keys(rep)[0] }}: {{ Object.values(rep)[0].toLocaleString() }}
+            <span v-if="Object.keys(rep)[0] === 'Submit'">(?)</span>
           </li>
         </ul>
       </div>
@@ -80,6 +82,11 @@ export default {
     const maxSCUSizes = ["1 SCU", "4 SCU", "8 SCU", "16 SCU", "32 SCU"];
     const cargoRoutes = ["Local", "Planetary", "Solar", "Interstellar"];
     const cargoGrades = ["Extra Small", "Small", "Medium", "Large"];
+    const locationAmountMap = {
+      'AToB': 'Direct Route',
+      'SingleToMulti3': '1x Pickup, 3x Dropoffs',
+      'Multi3ToSingle': '3x Pickups, 1x Dropoff',
+    }
     const locations = [...new Set(cargoMissions.map(mission => mission.location))];
 
     const filteredMissions = computed(() => {
@@ -96,6 +103,11 @@ export default {
       });
     });
 
+    const getInternalNamePart = (internalName) => {
+      const parts = internalName.split('_');
+      return parts.length > 1 ? locationAmountMap[parts[1]] : internalName;
+    };
+
     return {
       filters,
       reputationRanks,
@@ -104,6 +116,7 @@ export default {
       cargoGrades,
       locations,
       filteredMissions,
+      getInternalNamePart
     };
   },
 };
@@ -113,8 +126,7 @@ export default {
 .cargo-mission-list {
   width: 100%;
   max-width: 1000px;
-  margin: 20px auto;
-  padding: 10px;
+  margin: 0 auto;
 
   h1,h2 {
     text-align: center;

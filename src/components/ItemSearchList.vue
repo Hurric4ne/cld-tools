@@ -6,8 +6,12 @@
 
     <ul class="item-list">
       <li v-for="item in filteredItems" :key="item.id" class="item">
-        <label>
+        <label v-if="item.price_buy !== 0">
           <input type="checkbox" v-model="selectedItems" :value="item.item_name" />
+          {{ item.item_name }}
+        </label>
+        <label v-else :class="{ disabled: item.price_buy === 0 }">
+          <input type="checkbox" v-model="selectedItems" :value="item.item_name" disabled />
           {{ item.item_name }}
         </label>
       </li>
@@ -23,12 +27,12 @@
             {{ city.name }}
           </option>
         </template>
-<template v-for="station in sortedStations" :key="station.id">
-          <option v-if="station.nickname !== 'PO' && station.nickname !== 'INS Jericho'" :value="station.name">
-            {{ station.nickname }}
-          </option>
-        </template>
-</select> -->
+        <template v-for="station in sortedStations" :key="station.id">
+                  <option v-if="station.nickname !== 'PO' && station.nickname !== 'INS Jericho'" :value="station.name">
+                    {{ station.nickname }}
+                  </option>
+                </template>
+        </select> -->
       <!-- Submit Button -->
       <ThemedButton :disabled="!$props.items.length || !selectedItems.length" @click="updateStoredItems">
         Submit List
@@ -85,10 +89,10 @@ export default {
     const uniqueItems = computed(() => {
       const seen = new Set();
       return props.items.filter((item) => {
-        // Exclude items with price_buy of 0
-        if (item.price_buy === 0) {
-          return false;
-        }
+        // // Exclude items with price_buy of 0
+        // if (item.price_buy === 0) {
+        //   return false;
+        // }
         // Ensure uniqueness by item_name
         if (seen.has(item.item_name)) {
           return false;
@@ -194,6 +198,15 @@ export default {
 
       input[type='checkbox'] {
         margin-right: 10px;
+      }
+    }
+
+    label.disabled {
+      color: darkgray;
+
+      input[type='checkbox'] {
+        visibility: hidden;
+        opacity: 0;
       }
     }
   }
