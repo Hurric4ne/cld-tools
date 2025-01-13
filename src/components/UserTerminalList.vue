@@ -49,7 +49,7 @@ import { ref, computed } from "vue";
 import { useUserStore } from "@/stores/useUserStore";
 
 export default {
-  name: "ManualShoppingList",
+  name: "UserTerminalList",
   props: {
     items: {
       type: Array,

@@ -73,39 +73,6 @@ export default {
       const result = [];
       const processedTerminals = new Set();
 
-      // Find the starting terminal by matching the id_terminal with the id from props.terminals
-      if(userStore.startingLocation !== '') {
-        const startingTerminal = groupedItems.value.find(terminal => {
-          const matchedTerminal = props.terminals.find(term => {
-            const location = userStore.startingLocation.toLowerCase();
-            return (
-              term.id === parseInt(terminal.id_terminal) && // Ensure matching by terminal id
-              (term.space_station_name?.toLowerCase().includes(location) ||
-                term.city_name?.toLowerCase().includes(location))
-            );
-          });
-          return !!matchedTerminal; // Return true if a match is found
-        });
-
-        if (startingTerminal) {
-          const filteredItems = startingTerminal.items.filter(item =>
-            remainingItems.has(item.item_name),
-          );
-
-          if (filteredItems.length > 0) {
-            result.push({
-              id_terminal: startingTerminal.id_terminal,
-              items: filteredItems,
-            });
-
-            // Mark items as processed
-            filteredItems.forEach(item => remainingItems.delete(item.item_name));
-            processedTerminals.add(startingTerminal.id_terminal);
-          }
-        }
-      }
-
-      // Then, apply the original logic for the remaining items
       while (remainingItems.size > 0) {
         let bestTerminal = null;
         let maxUniqueItems = 0;

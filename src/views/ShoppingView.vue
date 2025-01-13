@@ -13,6 +13,7 @@
       <ItemSearchList :stations="stations" :cities="cities" :items="items" />
       <UserTerminalList :terminals="terminals" :items="items" />
       <TerminalList :terminals="terminals" :items="items" />
+      <!-- <SellItemList :items="items" /> -->
     </div>
   </div>
   <p class="uex-api-badge">Powered by <img class="uex-logo" src="/uex-logo.svg" alt="UEX" draggable="false" /></p>
@@ -20,6 +21,7 @@
 
 <script>
 import ItemSearchList from '@/components/ItemSearchList.vue';
+// import SellItemList from '@/components/SellItemList.vue';
 import TerminalList from '@/components/TerminalList.vue';
 import UserTerminalList from '@/components/UserTerminalList.vue';
 import { ref, onMounted } from 'vue';
@@ -27,8 +29,9 @@ import { ref, onMounted } from 'vue';
 export default {
   components: {
     ItemSearchList,
+    UserTerminalList,
     TerminalList,
-    UserTerminalList
+    // SellItemList,
   },
   setup() {
     // Reactive data states
