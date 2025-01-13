@@ -19,20 +19,6 @@
     </ul>
 
     <div class="button-container">
-      <!-- disabled for now due to errors -->
-      <!-- <select v-model="startingLocation" class="starting-location">
-        <option value="" selected>Starting Location (optional)</option>
-        <template v-for="city in cities" :key="city.id">
-          <option :value="city.name">
-            {{ city.name }}
-          </option>
-        </template>
-        <template v-for="station in sortedStations" :key="station.id">
-                  <option v-if="station.nickname !== 'PO' && station.nickname !== 'INS Jericho'" :value="station.name">
-                    {{ station.nickname }}
-                  </option>
-                </template>
-        </select> -->
       <!-- Submit Button -->
       <ThemedButton :disabled="!$props.items.length || !selectedItems.length" @click="updateStoredItems">
         Submit List
@@ -72,7 +58,6 @@ export default {
   setup(props) {
     const userStore = useUserStore(); // Access the store
 
-    const startingLocation = ref('');
     const searchQuery = ref('');
     const debouncedQuery = ref('');
     const selectedItems = ref([]); // To hold full item details
@@ -89,10 +74,6 @@ export default {
     const uniqueItems = computed(() => {
       const seen = new Set();
       return props.items.filter((item) => {
-        // // Exclude items with price_buy of 0
-        // if (item.price_buy === 0) {
-        //   return false;
-        // }
         // Ensure uniqueness by item_name
         if (seen.has(item.item_name)) {
           return false;
@@ -131,7 +112,6 @@ export default {
         selectedItems.value.includes(item.item_name),
       );
       userStore.setSelectedItems(selectedFullItems);
-      userStore.setStartingLocation(startingLocation.value);
     };
 
     const resetStoredItems = () => {
@@ -139,13 +119,11 @@ export default {
       searchQuery.value = ''; // Clear the search bar
       debouncedQuery.value = ''; // Clear the debounced value
       userStore.clearSelectedItems(); // Clear the selected items in the store
-      userStore.clearStartingLocation();
     };
 
     return {
       userStore, // Expose the store to the template
       sortedStations,
-      startingLocation,
       searchQuery,
       selectedItems,
       filteredItems,

@@ -36,7 +36,6 @@ export default {
     const terminals = ref([]);
     const stations = ref([]);
     const cities = ref([]);
-    // const orbitDistances = ref([]);
     const isLoading = ref(true);
 
     const fetchAllData = async () => {
@@ -44,8 +43,7 @@ export default {
         items: 'https://api.uexcorp.space/2.0/items_prices_all',
         terminals: 'https://api.uexcorp.space/2.0/terminals?type=item',
         stations: 'https://api.uexcorp.space/2.0/space_stations?id_star_system=68',
-        cities: 'https://api.uexcorp.space/2.0/cities?id_star_system=68',
-        // orbit_distances: 'https://api.uexcorp.space/2.0/orbits_distances?id_star_system_origin=68',
+        cities: 'https://api.uexcorp.space/2.0/cities?id_star_system=68'
       };
 
       try {
@@ -55,12 +53,11 @@ export default {
           return result.data;
         };
 
-        const [fetchedItems, fetchedTerminals, fetchedStations, fetchedCities/**, fetchedOrbitDistances **/] = await Promise.all([
+        const [fetchedItems, fetchedTerminals, fetchedStations, fetchedCities] = await Promise.all([
           fetchData(endpoints.items),
           fetchData(endpoints.terminals),
           fetchData(endpoints.stations),
-          fetchData(endpoints.cities),
-          // fetchData(endpoints.orbit_distances),
+          fetchData(endpoints.cities)
         ]);
 
         // Update reactive states
@@ -68,21 +65,18 @@ export default {
         terminals.value = fetchedTerminals;
         stations.value = fetchedStations;
         cities.value = fetchedCities;
-        // orbitDistances.value = fetchedOrbitDistances;
 
         // Remove data from localStorage
         localStorage.removeItem('items');
         localStorage.removeItem('terminals');
         localStorage.removeItem('stations');
         localStorage.removeItem('cities');
-        localStorage.removeItem('orbit_distances');
 
         // Cache the data in localStorage
         localStorage.setItem('items', JSON.stringify(fetchedItems));
         localStorage.setItem('terminals', JSON.stringify(fetchedTerminals));
         localStorage.setItem('stations', JSON.stringify(fetchedStations));
         localStorage.setItem('cities', JSON.stringify(fetchedCities));
-        // localStorage.setItem('orbit_distances', JSON.stringify(fetchedOrbitDistances));
         const expirationTime = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
         localStorage.setItem('dataExpiration', expirationTime.toString());
       } catch (error) {
@@ -103,7 +97,6 @@ export default {
         terminals.value = JSON.parse(localStorage.getItem('terminals')) || [];
         stations.value = JSON.parse(localStorage.getItem('stations')) || [];
         cities.value = JSON.parse(localStorage.getItem('cities')) || [];
-        // orbitDistances.value = JSON.parse(localStorage.getItem('orbit_distances')) || [];
         isLoading.value = false;
         console.log('Data loaded from localStorage');
       }
@@ -114,8 +107,7 @@ export default {
       items,
       terminals,
       stations,
-      cities,
-      // orbitDistances,
+      cities
     };
   },
 };
