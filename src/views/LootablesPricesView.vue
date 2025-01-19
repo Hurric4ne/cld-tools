@@ -107,9 +107,6 @@ export default {
         .sort((a, b) => b.price_sell - a.price_sell);
     });
 
-    console.log(allSellableCommodities.value);
-
-
     const toggleCollapse = () => {
       isCollapsed.value = !isCollapsed.value;
     };
