@@ -1,6 +1,6 @@
 <template>
   <div class="cargo-mission-list">
-    <h1>Cargo Mission List</h1>
+    <h1>Cargo Missions</h1>
     <div class="filters">
       <label for="reputationRankFilter">Reputation Rank:</label>
       <select id="reputationRankFilter" v-model="filters.reputationRank">

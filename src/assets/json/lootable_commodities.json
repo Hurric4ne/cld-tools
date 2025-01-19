@@ -1,0 +1,98 @@
+[
+  {
+    "item_name": "E'tam",
+    "illegal": true
+  },
+  {
+    "item_name": "Gasping Weevil Eggs",
+    "illegal": true
+  },
+  {
+    "item_name": "Maze",
+    "illegal": true
+  },
+  {
+    "item_name": "SLAM",
+    "illegal": true
+  },
+  {
+    "item_name": "WiDoW",
+    "illegal": true
+  },
+  {
+    "item_name": "Agricium",
+    "illegal": false
+  },
+  {
+    "item_name": "Aluminum",
+    "illegal": false
+  },
+  {
+    "item_name": "Beryl",
+    "illegal": false
+  },
+  {
+    "item_name": "Bexalite",
+    "illegal": false
+  },
+  {
+    "item_name": "Borase",
+    "illegal": false
+  },
+  {
+    "item_name": "Copper",
+    "illegal": false
+  },
+  {
+    "item_name": "Corrundum",
+    "illegal": false
+  },
+  {
+    "item_name": "Diamond",
+    "illegal": false
+  },
+  {
+    "item_name": "Distilled Spirits",
+    "illegal": false
+  },
+  {
+    "item_name": "Gold",
+    "illegal": false
+  },
+  {
+    "item_name": "Iron",
+    "illegal": false
+  },
+  {
+    "item_name": "Laranite",
+    "illegal": false
+  },
+  {
+    "item_name": "Medical Supplies",
+    "illegal": false
+  },
+  {
+    "item_name": "Processed Food",
+    "illegal": false
+  },
+  {
+    "item_name": "Quantanium",
+    "illegal": false
+  },
+  {
+    "item_name": "Quartz",
+    "illegal": false
+  },
+  {
+    "item_name": "Scrap",
+    "illegal": false
+  },
+  {
+    "item_name": "Titanium",
+    "illegal": false
+  },
+  {
+    "item_name": "Tungsten",
+    "illegal": false
+  }
+]

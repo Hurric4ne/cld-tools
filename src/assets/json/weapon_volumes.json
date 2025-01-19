@@ -1,0 +1,122 @@
+[
+  {
+      "item_name": "GP-33 MOD Grenade Launcher",
+      "volume": 18000
+  },
+  {
+      "item_name": "Scalpel Sniper Rifle",
+      "volume": 16000
+  },
+  {
+      "item_name": "Atzkav Sniper Rifle",
+      "volume": 16000
+  },
+  {
+      "item_name": "P6-LR Sniper Rifle",
+      "volume": 16000
+  },
+  {
+      "item_name": "Arrowhead Sniper Rifle",
+      "volume": 16000
+  },
+  {
+      "item_name": "A03 Sniper Rifle",
+      "volume": 16000
+  },
+  {
+      "item_name": "Demeco LMG",
+      "volume": 20000
+  },
+  {
+      "item_name": "F55 LMG",
+      "volume": 20000
+  },
+  {
+      "item_name": "FS-9 LMG",
+      "volume": 20000
+  },
+  {
+      "item_name": "Ravager-212 Twin Shotgun",
+      "volume": 19000
+  },
+  {
+      "item_name": "P8-AR Assault Rifle",
+      "volume": 13000
+  },
+  {
+      "item_name": "BR-2 Shotgun",
+      "volume": 19000
+  },
+  {
+      "item_name": "Gallant Rifle",
+      "volume": 13000
+  },
+  {
+      "item_name": "P4-AR Rifle",
+      "volume": 13000
+  },
+  {
+      "item_name": "R97 Shotgun",
+      "volume": 19000
+  },
+  {
+      "item_name": "S71 Rifle",
+      "volume": 13000
+  },
+  {
+      "item_name": "Karna Rifle",
+      "volume": 13000
+  },
+  {
+      "item_name": "Devastator Shotgun",
+      "volume": 19000
+  },
+  {
+      "item_name": "P8-SC SMG",
+      "volume": 7700
+  },
+  {
+      "item_name": "C54 SMG",
+      "volume": 7700
+  },
+  {
+      "item_name": "Lumin V SMG",
+      "volume": 7700
+  },
+  {
+      "item_name": "Custodian SMG",
+      "volume": 7700
+  },
+  {
+      "item_name": "Coda Pistol",
+      "volume": 1100
+  },
+  {
+      "item_name": "LH86 Pistol",
+      "volume": 1100
+  },
+  {
+      "item_name": "S-38 Pistol",
+      "volume": 1100
+  },
+  {
+      "item_name": "Salvo Frag Pistol",
+      "volume": 1100
+  },
+  {
+      "item_name": "Arclight Pistol",
+      "volume": 1100
+  },
+  {
+      "item_name": "Yubarev Pistol",
+      "volume": 1100
+  },
+  {
+      "item_name": "MK-4 Frag Grenade",
+      "volume": 900
+  },
+  {
+      "item_name": "WowBlast Desperado Toy Pistol Teal",
+      "volume": 1100
+  }
+]

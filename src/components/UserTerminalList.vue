@@ -93,9 +93,15 @@ export default {
           const terminal = props.terminals.find((term) => term.id === parseInt(item.id_terminal));
           return terminal ? terminal.planet_name : null;
         })
-        .filter((location) => location !== null);
+        .filter((location) => location !== null && location !== "");
 
-      return [...new Set(locations)].sort((a, b) => a.localeCompare(b)); // Remove duplicates and sort alphabetically
+      // Filter out locations that don't have terminals with available items
+      const validLocations = locations.filter((location) => {
+        const terminals = getTerminalsForItem(itemName, location);
+        return terminals.length > 0;
+      });
+
+      return [...new Set(validLocations)].sort((a, b) => a.localeCompare(b)); // Remove duplicates and sort alphabetically
     };
 
     // Function to get the price of an item for a selected terminal

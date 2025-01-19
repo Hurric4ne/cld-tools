@@ -6,12 +6,8 @@
 
     <ul class="item-list">
       <li v-for="item in filteredItems" :key="item.id" class="item">
-        <label v-if="item.price_buy !== 0">
+        <label>
           <input type="checkbox" v-model="selectedItems" :value="item.item_name" />
-          {{ item.item_name }}
-        </label>
-        <label v-else :class="{ disabled: item.price_buy === 0 }">
-          <input type="checkbox" v-model="selectedItems" :value="item.item_name" disabled />
           {{ item.item_name }}
         </label>
       </li>
@@ -45,14 +41,6 @@ export default {
     items: {
       type: Array,
       required: true
-    },
-    stations: {
-      type: Array,
-      required: true
-    },
-    cities: {
-      type: Array,
-      required: true
     }
   },
   setup(props) {
@@ -62,13 +50,6 @@ export default {
     const debouncedQuery = ref('');
     const selectedItems = ref([]); // To hold full item details
     let debounceTimeout = null;
-
-    // Sort props.stations
-    const sortedStations = computed(() => {
-      return [...props.stations].sort((a, b) => {
-        return a.is_lagrange === b.is_lagrange ? 0 : a.is_lagrange === 0 ? -1 : 1;
-      });
-    });
 
     // Filter props.items to ensure only unique items are used
     const uniqueItems = computed(() => {
@@ -123,7 +104,6 @@ export default {
 
     return {
       userStore, // Expose the store to the template
-      sortedStations,
       searchQuery,
       selectedItems,
       filteredItems,
