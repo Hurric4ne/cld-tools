@@ -1,98 +1,122 @@
 [
   {
-    "item_name": "E'tam",
+    "commodity_name": "E'tam",
+    "volume": "default",
     "illegal": true
   },
   {
-    "item_name": "Gasping Weevil Eggs",
+    "commodity_name": "Gasping Weevil Eggs",
+    "volume": "default",
     "illegal": true
   },
   {
-    "item_name": "Maze",
+    "commodity_name": "Maze",
+    "volume": "default",
     "illegal": true
   },
   {
-    "item_name": "SLAM",
+    "commodity_name": "SLAM",
+    "volume": "default",
     "illegal": true
   },
   {
-    "item_name": "WiDoW",
+    "commodity_name": "WiDoW",
+    "volume": "default",
     "illegal": true
   },
   {
-    "item_name": "Agricium",
+    "commodity_name": "Agricium",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Aluminum",
+    "commodity_name": "Aluminum",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Beryl",
+    "commodity_name": "Beryl",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Bexalite",
+    "commodity_name": "Bexalite",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Borase",
+    "commodity_name": "Borase",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Copper",
+    "commodity_name": "Copper",
+    "volume": "high",
     "illegal": false
   },
   {
-    "item_name": "Corrundum",
+    "commodity_name": "Corrundum",
+    "volume": "high",
     "illegal": false
   },
   {
-    "item_name": "Diamond",
+    "commodity_name": "Diamond",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Distilled Spirits",
+    "commodity_name": "Distilled Spirits",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Gold",
+    "commodity_name": "Gold",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Iron",
+    "commodity_name": "Iron",
+    "volume": "high",
     "illegal": false
   },
   {
-    "item_name": "Laranite",
+    "commodity_name": "Laranite",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Medical Supplies",
+    "commodity_name": "Medical Supplies",
+    "volume": "high",
     "illegal": false
   },
   {
-    "item_name": "Processed Food",
+    "commodity_name": "Processed Food",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Quantanium",
+    "commodity_name": "Quantanium",
+    "volume": "low",
     "illegal": false
   },
   {
-    "item_name": "Quartz",
+    "commodity_name": "Quartz",
+    "volume": "high",
     "illegal": false
   },
   {
-    "item_name": "Scrap",
+    "commodity_name": "Scrap",
+    "volume": "high",
     "illegal": false
   },
   {
-    "item_name": "Titanium",
+    "commodity_name": "Titanium",
+    "volume": "high",
     "illegal": false
   },
   {
-    "item_name": "Tungsten",
+    "commodity_name": "Tungsten",
+    "volume": "high",
     "illegal": false
   }
 ]

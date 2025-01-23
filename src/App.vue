@@ -65,7 +65,7 @@ const fetchAllData = async () => {
     });
     const cleanedCommodities = fetchedCommodities.map(commodity => {
       return {
-        price_sell: commodity.price_sell,
+        price_sell_avg: commodity.price_sell_avg,
         commodity_name: commodity.commodity_name
       };
     });
@@ -120,6 +120,8 @@ onMounted(async () => {
   --color-darkgray: #282828;
   --color-lightgray: #f0f0f0;
   --color-red: #da2128;
+  --color-yellow: #c9a700;
+  --color-green: #006400;
 }
 
 body {
