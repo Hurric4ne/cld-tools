@@ -81,9 +81,13 @@ export default {
         );
       }
       return uniqueItems.value.filter((item) => {
-        return item.item_name
+        if (item.item_name !== null) {
+          return item.item_name
           .toLowerCase()
           .includes(debouncedQuery.value.toLowerCase());
+        } else {
+          console.log(`${item} does not have an item_name`);
+        }
       });
     });
 
