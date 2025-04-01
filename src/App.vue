@@ -130,7 +130,7 @@ onMounted(async () => {
 body {
   position: relative;
   width: calc(100vw - 20px);
-  max-width: 1920px;
+  max-width: 1242px;
   margin: 0 auto;
   font-family: 'Orbitron', serif;
   font-optical-sizing: auto;
@@ -168,9 +168,9 @@ nav {
 }
 
 .uex-api-badge {
-  position: fixed;
-  right: 10px;
-  bottom: 5px;
+  position: relative;
+  margin-bottom: 10px;
+  left: calc(100% - 105px);
   width: 105px;
   font-size: 14px;
   display: flex;
