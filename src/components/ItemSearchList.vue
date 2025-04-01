@@ -121,7 +121,7 @@ export default {
 
 <style scoped lang="scss">
 .item-search-list {
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 40px auto;
   border: 1px solid var(--color-red);
   padding: 20px;

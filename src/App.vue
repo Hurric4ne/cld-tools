@@ -15,7 +15,9 @@
       <LootablesPricesView :items="items" :commodities="commodities" />
     </section>
   </div>
-  <p class="uex-api-badge">Powered by <img class="uex-logo" src="/uex-logo.svg" alt="UEX" draggable="false" /></p>
+  <a class="uex-api-badge" href="https://uexcorp.space/" target="_blank" rel="noopener noreferrer">
+    Powered by <img class="uex-logo" src="/uex-logo.svg" alt="UEX" draggable="false" />
+  </a>
 </template>
 
 <script setup>
@@ -122,6 +124,7 @@ onMounted(async () => {
   --color-red: #da2128;
   --color-yellow: #c9a700;
   --color-green: #006400;
+  --max-width: 1200px;
 }
 
 body {
@@ -161,18 +164,20 @@ nav {
 
 .section-title {
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .uex-api-badge {
   position: fixed;
   right: 10px;
-  bottom: 0;
-  width: 100px;
-  font-size: 13px;
+  bottom: 5px;
+  width: 105px;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 5px;
+  color: var(--color-white);
+  text-decoration: none;
 }
 </style>

@@ -7,6 +7,7 @@
           <th>Name</th>
           <th>Location</th>
           <th>Terminal</th>
+          <th>Amount</th>
           <th>Price (aUEC)</th>
         </tr>
       </thead>
@@ -31,11 +32,14 @@
             </select>
           </td>
           <td>
-            {{ formatNumber(getPriceForItem(item.item_name, selectedTerminals[index])) }}
+            <input :disabled="!selectedTerminals[index]" class="input-amount" v-model.number="item.inputAmount" :id="'input-' + index" type="number" min="1" placeholder="Amount" def />
+          </td>
+          <td>
+            {{ formatNumber(getPriceForItem(item.item_name, selectedTerminals[index]) * (item.inputAmount || 1)) }}
           </td>
         </tr>
         <tr class="total-row">
-          <td colspan="3" class="total-label">Total</td>
+          <td colspan="4" class="total-label">Total</td>
           <td class="total-value">{{ formatNumber(getTotalCost()) }} aUEC</td>
         </tr>
       </tbody>
@@ -122,7 +126,7 @@ export default {
     // Function to calculate the total cost of selected items
     const getTotalCost = () => {
       return selectedItems.value.reduce((total, item, index) => {
-        return total + getPriceForItem(item.item_name, selectedTerminals.value[index]);
+        return total + (getPriceForItem(item.item_name, selectedTerminals.value[index]) * (item.inputAmount || 0));
       }, 0);
     };
 
@@ -150,7 +154,7 @@ export default {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 50px auto 20px;
 }
 
@@ -171,10 +175,14 @@ td {
   border: 1px solid #ccc;
 }
 
-select {
+select, input {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.input-amount {
+  width: 100px;
 }
 
 .no-items {

@@ -142,7 +142,7 @@ export default {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 50px auto 20px;
 }
 
