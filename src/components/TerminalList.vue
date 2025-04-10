@@ -43,8 +43,8 @@ export default {
     const detailedSelectedItems = computed(() => {
       const selectedNames = userStore.selectedItems.map(item => item.item_name)
       return props.items.filter(item =>
-        selectedNames.includes(item.item_name),
-      ).filter(item => item.price_buy > 0)
+        selectedNames.includes(item.item_name)
+      )
     })
 
     // Group detailed selected items by id_terminal

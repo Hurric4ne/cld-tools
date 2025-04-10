@@ -78,7 +78,7 @@ export default {
     const getTerminalsForItem = (itemName, selectedLocation) => {
       const terminals = props.items
         .filter((item) =>
-          item.item_name === itemName && parseFloat(item.price_buy) > 0 // Exclude items with buy_price <= 0
+          item.item_name === itemName
         )
         .map((item) => {
           const terminal = props.terminals.find((term) => term.id === parseInt(item.id_terminal));

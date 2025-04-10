@@ -55,7 +55,7 @@ const fetchAllData = async () => {
     ]);
 
     // Only save needed properties
-    const cleanedItems = fetchedItems.map(item => {
+    const reducedItems = fetchedItems.map(item => {
       return {
         id_terminal: item.id_terminal,
         id_category: item.id_category,
@@ -65,6 +65,8 @@ const fetchAllData = async () => {
         terminal_name: item.terminal_name
       };
     });
+    const cleanedItems = reducedItems.filter(item => item.price_buy !== 0);
+
     const cleanedCommodities = fetchedCommodities.map(commodity => {
       return {
         price_sell_avg: commodity.price_sell_avg,
