@@ -3,6 +3,7 @@
     <nav>
       <button @click="currentView = 'ShoppingView'">Shopping-List</button>
       <!-- <button @click="currentView = 'CargoMissionView'">Cargo-Missions</button> -->
+      <button @click="currentView = 'ProfitCalculatorView'">Profit Calculator</button>
       <button @click="currentView = 'LootablePricesView'">Lootable Item Prices</button>
     </nav>
     <section v-if="currentView === 'ShoppingView'">
@@ -12,7 +13,10 @@
       <CargoMissionView />
     </section> -->
     <section v-if="currentView === 'LootablePricesView'">
-      <LootablesPricesView :items="items" :commodities="commodities" />
+      <LootablesPricesView :items="farmItems" :commodities="commodities" />
+    </section>
+    <section v-if="currentView === 'ProfitCalculatorView'">
+      <ProfitCalculatorView />
     </section>
   </div>
   <a class="uex-api-badge" href="https://uexcorp.space/" target="_blank" rel="noopener noreferrer">
@@ -25,11 +29,13 @@ import { ref, onMounted } from 'vue';
 import ShoppingView from '@/views/ShoppingView.vue';
 // import CargoMissionView from '@/views/CargoMissionView.vue';
 import LootablesPricesView from '@/views/LootablesPricesView.vue';
+import ProfitCalculatorView from '@/views/ProfitCalculatorView.vue'; // Import the new view
 
 const currentView = ref('ShoppingView');
 
 // Reactive data states
 const items = ref([]);
+const farmItems = ref([]);
 const terminals = ref([]);
 const commodities = ref([]);
 const isLoading = ref(true);
@@ -66,6 +72,7 @@ const fetchAllData = async () => {
       };
     });
     const cleanedItems = reducedItems.filter(item => item.price_buy !== 0);
+    const cleanedFarmItems = reducedItems.filter(item => item.price_buy === 0 && item.id_category === 18);
 
     const cleanedCommodities = fetchedCommodities.map(commodity => {
       return {
@@ -76,11 +83,13 @@ const fetchAllData = async () => {
 
     // Update reactive states
     items.value = cleanedItems;
+    farmItems.value = cleanedFarmItems;
     terminals.value = fetchedTerminals;
     commodities.value = cleanedCommodities;
 
     // Remove data from localStorage
     localStorage.removeItem('items');
+    localStorage.removeItem('farmItems');
     localStorage.removeItem('terminals');
     localStorage.removeItem('commodities');
     // older data not used anymore
@@ -90,6 +99,7 @@ const fetchAllData = async () => {
 
     // Cache the data in localStorage
     localStorage.setItem('items', JSON.stringify(cleanedItems));
+    localStorage.setItem('farmItems', JSON.stringify(cleanedFarmItems));
     localStorage.setItem('terminals', JSON.stringify(fetchedTerminals));
     localStorage.setItem('commodities', JSON.stringify(cleanedCommodities));
     const expirationTime = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
@@ -109,6 +119,7 @@ onMounted(async () => {
   } else {
     // Load cached data from localStorage
     items.value = JSON.parse(localStorage.getItem('items')) || [];
+    farmItems.value = JSON.parse(localStorage.getItem('farmItems')) || [];
     terminals.value = JSON.parse(localStorage.getItem('terminals')) || [];
     commodities.value = JSON.parse(localStorage.getItem('commodities')) || [];
     isLoading.value = false;
