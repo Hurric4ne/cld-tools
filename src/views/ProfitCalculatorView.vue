@@ -11,7 +11,7 @@
         @input="updateTotalProfit"
       />
     </div>
-    <div class="service-fee" title="Includes the Mo.Trader service fee in the profit calculation">
+    <div class="service-fee">
       <input
         id="includeFee"
         type="checkbox"
@@ -19,11 +19,19 @@
       />
       <label for="includeFee"> Include Service Fee (0.5%)</label>
     </div>
+    <div class="even-split">
+      <input
+        id="splitEvenly"
+        type="checkbox"
+        v-model="splitEvenly"
+      />
+      <label for="splitEvenly"> Split Profits Evenly</label>
+    </div>
     <table>
       <thead>
         <tr>
           <th>Name</th>
-          <th>Time (hh:mm)</th>
+          <th>Time (hh:mm:ss)</th>
           <th>Profit</th>
           <th>Actions</th>
         </tr>
@@ -41,8 +49,9 @@
             <input
               type="text"
               v-model="person.time"
-              placeholder="hh:mm"
+              placeholder="hh:mm:ss"
               @input="validateTime(index)"
+              :disabled="splitEvenly"
             />
           </td>
           <td>
@@ -59,12 +68,13 @@
       <button @click="calculateProfit">Calculate Profit</button>
     </div>
     <div class="input-area">
-      <label class="ta-label" for="bulkInput">Create Table from Attendance (only for Event Leads):</label>
+      <label for="bulkInput">Bulk Input:</label>
       <textarea
         id="bulkInput"
         v-model="bulkInput"
         placeholder="Paste your data here"
-        rows="5"
+        rows="10"
+        cols="50"
       ></textarea>
       <button @click="processBulkInput">Process Input</button>
     </div>
@@ -76,12 +86,13 @@ import { reactive, ref } from 'vue';
 
 const totalProfit = ref(0);
 const formattedTotalProfit = ref('');
-const includeServiceFee = ref(false); // Checkbox state
+const includeServiceFee = ref(false); // Checkbox state for service fee
+const splitEvenly = ref(false); // Checkbox state for splitting profits evenly
 
 const participants = reactive([]);
 
 const addParticipant = () => {
-  participants.push({ name: '', time: '00:00', profit: 0 });
+  participants.push({ name: '', time: '00:00:00', profit: 0 });
 };
 
 const removeParticipant = (index) => {
@@ -90,35 +101,50 @@ const removeParticipant = (index) => {
 
 const validateTime = (index) => {
   const time = participants[index].time;
-  const timeRegex = /^(\d{1,2}):([0-5]?\d)$/;
+  const timeRegex = /^(\d{1,2}):([0-5]?\d):([0-5]?\d)$/; // Validate hh:mm:ss format
   if (!timeRegex.test(time)) {
-    participants[index].time = '00:00';
+    participants[index].time = '00:00:00';
   }
 };
 
 const calculateProfit = () => {
-  let totalMinutes = 0;
+  if (splitEvenly.value) {
+    // Split profits evenly among all participants
+    const evenProfit = Math.floor(totalProfit.value / participants.length);
+    participants.forEach((person) => {
+      let profit = evenProfit;
 
-  // Calculate total minutes attended by all participants
-  participants.forEach((person) => {
-    const [hours, minutes] = person.time.split(':').map(Number);
-    const totalTime = hours * 60 + minutes;
-    person.totalMinutes = totalTime;
-    totalMinutes += totalTime;
-  });
+      // Adjust for service fee if checkbox is checked
+      if (includeServiceFee.value) {
+        profit = Math.floor(profit / 1.005); // Adjust for 0.5% fee
+      }
 
-  // Distribute profit based on attendance time
-  participants.forEach((person) => {
-    const share = person.totalMinutes / totalMinutes;
-    let profit = Math.floor(totalProfit.value * share);
+      person.profit = profit;
+    });
+  } else {
+    let totalSeconds = 0;
 
-    // Adjust for service fee if checkbox is checked
-    if (includeServiceFee.value) {
-      profit = Math.floor(profit / 1.005); // Adjust for 0.5% fee
-    }
+    // Calculate total seconds attended by all participants
+    participants.forEach((person) => {
+      const [hours, minutes, seconds] = person.time.split(':').map(Number);
+      const totalTime = hours * 3600 + minutes * 60 + seconds;
+      person.totalSeconds = totalTime;
+      totalSeconds += totalTime;
+    });
 
-    person.profit = profit;
-  });
+    // Distribute profit based on attendance time
+    participants.forEach((person) => {
+      const share = person.totalSeconds / totalSeconds;
+      let profit = Math.floor(totalProfit.value * share);
+
+      // Adjust for service fee if checkbox is checked
+      if (includeServiceFee.value) {
+        profit = Math.floor(profit / 1.005); // Adjust for 0.5% fee
+      }
+
+      person.profit = profit;
+    });
+  }
 };
 
 const formatProfit = (profit) => {
@@ -135,7 +161,7 @@ const updateTotalProfit = (event) => {
 const bulkInput = ref('');
 
 const processBulkInput = () => {
-  if(!bulkInput.value) {
+  if (!bulkInput.value) {
     return; // Exit if input is empty
   }
 
@@ -167,7 +193,8 @@ const processBulkInput = () => {
   font-size: 1rem;
 }
 
-.service-fee {
+.service-fee,
+.even-split {
   margin: 10px 0;
   text-align: center;
 }
@@ -178,7 +205,8 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   border: 1px solid var(--color-lightgray);
   padding: 10px;
   text-align: center;
@@ -216,12 +244,6 @@ button:hover {
 .input-area {
   margin: 20px 0;
   text-align: center;
-}
-
-.ta-label {
-  display: block;
-  margin: 25px 0 10px;
-  font-size: 1.2em;
 }
 
 textarea {
