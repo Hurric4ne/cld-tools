@@ -2,16 +2,16 @@
   <div>
     <nav>
       <button @click="currentView = 'ShoppingView'">Shopping-List</button>
-      <!-- <button @click="currentView = 'CargoMissionView'">Cargo-Missions</button> -->
+      <button @click="currentView = 'CargoMissionView'">Cargo-Missions</button>
       <button @click="currentView = 'ProfitCalculatorView'">Profit Calculator</button>
       <button @click="currentView = 'LootablePricesView'">Lootable Item Prices</button>
     </nav>
     <section v-if="currentView === 'ShoppingView'">
       <ShoppingView :items="items" :terminals="terminals" :isLoading="isLoading" />
     </section>
-    <!-- <section v-if="currentView === 'CargoMissionView'">
+    <section v-if="currentView === 'CargoMissionView'">
       <CargoMissionView />
-    </section> -->
+    </section>
     <section v-if="currentView === 'LootablePricesView'">
       <LootablesPricesView :items="farmItems" :commodities="commodities" />
     </section>
@@ -27,7 +27,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import ShoppingView from '@/views/ShoppingView.vue';
-// import CargoMissionView from '@/views/CargoMissionView.vue';
+import CargoMissionView from '@/views/CargoMissionView.vue';
 import LootablesPricesView from '@/views/LootablesPricesView.vue';
 import ProfitCalculatorView from '@/views/ProfitCalculatorView.vue'; // Import the new view
 
