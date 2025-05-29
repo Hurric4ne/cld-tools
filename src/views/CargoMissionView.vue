@@ -50,6 +50,7 @@
         <p><strong>Location Amount:</strong> {{ getInternalNamePart(mission.internalName) }}</p>
         <p><strong>Reward:</strong> {{ mission.reward.toLocaleString() }}</p>
         <p><strong>Cargo Amount:</strong> {{ mission.cargoAmount }} (max. {{ mission.maxSCUSize }} Boxes)</p>
+        <p><strong>Commodities:</strong> {{ mission.commodities.join(', ') }}</p>
         <p><strong>Location:</strong> {{ mission.location }}</p>
         <p><strong>Reputation Rank:</strong> {{ mission.reputationRank }}</p>
         <p><strong>Reputation:</strong></p>
