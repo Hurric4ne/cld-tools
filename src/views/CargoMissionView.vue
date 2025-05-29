@@ -35,8 +35,11 @@
       <label for="rewardFilter">Reward:</label>
       <input type="number" id="rewardFilter" v-model.number="filters.reward" placeholder="Enter reward value" />
 
-      <label for="directRouteFilter">Only direct Routes:</label>
-      <input type="checkbox" id="directRouteFilter" v-model="filters.isDirectRoute" />
+      <label for="locationAmountFilter">Location Amount:</label>
+      <select id="locationAmountFilter" v-model="filters.locationAmount">
+        <option value="">All</option>
+        <option v-for="(label, key) in locationAmountMap" :key="key" :value="key">{{ label }}</option>
+      </select>
     </div>
 
     <h2>{{ filteredMissions.length }} items found</h2>
@@ -75,7 +78,7 @@ export default {
       cargoGrade: "",
       location: "",
       reward: 0,
-      isDirectRoute: false,
+      locationAmount: "",
     });
 
     const reputationRanks = ["Trainee", "Rookie", "Junior", "Member", "Experienced", "Senior", "Master"];
@@ -84,8 +87,12 @@ export default {
     const cargoGrades = ["Extra Small", "Small", "Medium", "Large"];
     const locationAmountMap = {
       'AToB': 'Direct Route',
+      'SingleToMulti2': '1x Pickup, 2x Dropoffs',
+      'Multi2ToSingle': '2x Pickups, 1x Dropoff',
       'SingleToMulti3': '1x Pickup, 3x Dropoffs',
       'Multi3ToSingle': '3x Pickups, 1x Dropoff',
+      'SingleToMulti4': '1x Pickup, 4x Dropoffs',
+      'Multi4ToSingle': '4x Pickups, 1x Dropoff'
     }
     const locations = [...new Set(cargoMissions.map(mission => mission.location))];
 
@@ -97,9 +104,12 @@ export default {
         const matchCargoGrade = !filters.cargoGrade || mission.cargoGrade === filters.cargoGrade;
         const matchLocation = !filters.location || mission.location === filters.location;
         const matchReward = !filters.reward || mission.reward >= filters.reward;
-        const matchDirectRoute = !filters.isDirectRoute || mission.isDirectRoute === filters.isDirectRoute;
-
-        return matchReputationRank && matchMaxSCUSize && matchCargoRoute && matchCargoGrade && matchLocation && matchReward && matchDirectRoute;
+        let matchLocationAmount = true;
+        if (filters.locationAmount) {
+          const parts = mission.internalName.split('_');
+          matchLocationAmount = parts.length > 1 && parts[1] === filters.locationAmount;
+        }
+        return matchReputationRank && matchMaxSCUSize && matchCargoRoute && matchCargoGrade && matchLocation && matchReward && matchLocationAmount;
       });
     });
 
@@ -115,6 +125,7 @@ export default {
       cargoRoutes,
       cargoGrades,
       locations,
+      locationAmountMap,
       filteredMissions,
       getInternalNamePart
     };
