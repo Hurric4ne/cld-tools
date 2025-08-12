@@ -1,5 +1,210 @@
 [
     {
+        "internalName": "HaulCargo_AToB_Stanton1_Intro",
+        "displayTitle": "Opportunity for Independent Cargo Hauler",
+        "location": "Hurston",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Stanton1_ReHire",
+        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
+        "location": "Hurston",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Stanton2_Intro",
+        "displayTitle": "Opportunity for Independent Cargo Hauler",
+        "location": "Crusader",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Stanton2_ReHire",
+        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
+        "location": "Crusader",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Stanton3_Intro",
+        "displayTitle": "Opportunity for Independent Cargo Hauler",
+        "location": "ArcCorp",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Stanton3_ReHire",
+        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
+        "location": "ArcCorp",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Stanton4_Intro",
+        "displayTitle": "Opportunity for Independent Cargo Hauler",
+        "location": "MicroTech",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Stanton4_ReHire",
+        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
+        "location": "MicroTech",
+        "isDirectRoute": true,
+        "reward": 50250,
+        "commodities": [
+            "A",
+            "To",
+            "B"
+        ],
+        "reputationRank": "Trainee",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Gas_Hydrogen_Stanton_BulkGrade",
+        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 247750,
+        "commodities": [
+            "Hydrogen"
+        ],
+        "reputationRank": "Experienced",
+        "maxSCUSize": "32 SCU",
+        "cargoAmount": "1.024 - 2.816 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Large",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 2000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_AToB_Gas_Hydrogen_Interstellar_BulkGrade",
         "displayTitle": "Senior Rank - Direct Interstellar Large Cargo Haul",
         "location": "no single location",
@@ -210,23 +415,23 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_Gas_Hydrogen_Stanton_BulkGrade",
-        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
+        "internalName": "HaulCargo_AToB_NonMetal_Carbon_Stanton_SmallGrade",
+        "displayTitle": "Junior Rank - Direct Solar Extra Small Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 247750,
+        "reward": 56250,
         "commodities": [
-            "Hydrogen"
+            "Carbon"
         ],
-        "reputationRank": "Experienced",
-        "maxSCUSize": "32 SCU",
-        "cargoAmount": "1.024 - 2.816 SCU",
+        "reputationRank": "Junior",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "6 - 12 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Large",
+        "cargoGrade": "Extra Small",
         "deadline": 360,
         "reputation": [
             {
-                "Success": 2000
+                "Success": 500
             }
         ]
     },
@@ -416,27 +621,6 @@
         "reputation": [
             {
                 "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_NonMetal_Carbon_Stanton_SmallGrade",
-        "displayTitle": "Junior Rank - Direct Solar Extra Small Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 56250,
-        "commodities": [
-            "Carbon"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Extra Small",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 500
             }
         ]
     },
@@ -756,6 +940,28 @@
         ]
     },
     {
+        "internalName": "HaulCargo_AToB_Processed_AgriculturalSupplies_Stanton_SmallGrade",
+        "displayTitle": "Rookie Rank - Direct Solar Small Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 41750,
+        "commodities": [
+            "Agricultural",
+            "Supplies"
+        ],
+        "reputationRank": "Rookie",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "8 - 16 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_AToB_Processed_AgriculturalSupplies_Interstellar_SmallGrade",
         "displayTitle": "Rookie Rank - Direct Interstellar Small Cargo Haul",
         "location": "no single location",
@@ -989,28 +1195,6 @@
         "maxSCUSize": "4 SCU",
         "cargoAmount": "8 - 16 SCU",
         "cargoRoute": "Planetary",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Processed_AgriculturalSupplies_Stanton_SmallGrade",
-        "displayTitle": "Rookie Rank - Direct Solar Small Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 41750,
-        "commodities": [
-            "Agricultural",
-            "Supplies"
-        ],
-        "reputationRank": "Rookie",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "8 - 16 SCU",
-        "cargoRoute": "Solar",
         "cargoGrade": "Small",
         "deadline": 300,
         "reputation": [
@@ -1620,6 +1804,72 @@
         ]
     },
     {
+        "internalName": "HaulCargo_AToB_Processed_PressurizedIce_Stanton_SmallGrade",
+        "displayTitle": "Junior Rank - Direct Solar Small Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 52250,
+        "commodities": [
+            "Pressurized",
+            "Ice"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "14 - 32 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Processed_PressurizedIce_Stanton_SupplyGrade",
+        "displayTitle": "Experienced Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 165250,
+        "commodities": [
+            "Pressurized",
+            "Ice"
+        ],
+        "reputationRank": "Experienced",
+        "maxSCUSize": "16 SCU",
+        "cargoAmount": "244 - 432 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 2000
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_Processed_PressurizedIce_Stanton_SupplyGrade1",
+        "displayTitle": "Experienced Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 162250,
+        "commodities": [
+            "Pressurized",
+            "Ice"
+        ],
+        "reputationRank": "Experienced",
+        "maxSCUSize": "16 SCU",
+        "cargoAmount": "244 - 432 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 2000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_AToB_Processed_PressurizedIce_Interstellar_BulkGrade",
         "displayTitle": "Experienced Rank - Direct Interstellar Large Cargo Haul",
         "location": "no single location",
@@ -1730,43 +1980,21 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_Processed_PressurizedIce_Stanton_SmallGrade",
-        "displayTitle": "Junior Rank - Direct Solar Small Cargo Haul",
+        "internalName": "HaulCargo_AToB_Processed_ProcessedFood_Stanton_BulkGrade",
+        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 52250,
+        "reward": 245500,
         "commodities": [
-            "Pressurized",
-            "Ice"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "14 - 32 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Processed_PressurizedIce_Stanton_SupplyGrade",
-        "displayTitle": "Experienced Rank - Direct Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 165250,
-        "commodities": [
-            "Pressurized",
-            "Ice"
+            "Processed",
+            "Food"
         ],
         "reputationRank": "Experienced",
-        "maxSCUSize": "16 SCU",
-        "cargoAmount": "244 - 432 SCU",
+        "maxSCUSize": "32 SCU",
+        "cargoAmount": "1.024 - 2.816 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 480,
+        "cargoGrade": "Large",
+        "deadline": 300,
         "reputation": [
             {
                 "Success": 2000
@@ -1774,21 +2002,21 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_Processed_PressurizedIce_Stanton_SupplyGrade1",
-        "displayTitle": "Experienced Rank - Direct Solar Medium Cargo Haul",
+        "internalName": "HaulCargo_AToB_Processed_ProcessedFood_Stanton_BulkGrade1",
+        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 162250,
+        "reward": 248250,
         "commodities": [
-            "Pressurized",
-            "Ice"
+            "Processed",
+            "Food"
         ],
         "reputationRank": "Experienced",
-        "maxSCUSize": "16 SCU",
-        "cargoAmount": "244 - 432 SCU",
+        "maxSCUSize": "32 SCU",
+        "cargoAmount": "1.024 - 2.816 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 480,
+        "cargoGrade": "Large",
+        "deadline": 360,
         "reputation": [
             {
                 "Success": 2000
@@ -1906,46 +2134,23 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_Processed_ProcessedFood_Stanton_BulkGrade",
-        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
+        "internalName": "HaulCargo_AToB_Processed_Stims_Stanton_SupplyGrade",
+        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 245500,
+        "reward": 87250,
         "commodities": [
-            "Processed",
-            "Food"
+            "Stims"
         ],
-        "reputationRank": "Experienced",
-        "maxSCUSize": "32 SCU",
-        "cargoAmount": "1.024 - 2.816 SCU",
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "80 - 112 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Large",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 2000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Processed_ProcessedFood_Stanton_BulkGrade1",
-        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 248250,
-        "commodities": [
-            "Processed",
-            "Food"
-        ],
-        "reputationRank": "Experienced",
-        "maxSCUSize": "32 SCU",
-        "cargoAmount": "1.024 - 2.816 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Large",
+        "cargoGrade": "Medium",
         "deadline": 360,
         "reputation": [
             {
-                "Success": 2000
+                "Success": 500
             }
         ]
     },
@@ -2261,27 +2466,6 @@
         "reputation": [
             {
                 "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Processed_Stims_Stanton_SupplyGrade",
-        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 87250,
-        "commodities": [
-            "Stims"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "80 - 112 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 500
             }
         ]
     },
@@ -2624,6 +2808,48 @@
         ]
     },
     {
+        "internalName": "HaulCargo_AToB_RefinedOre_Aluminium_Stanton_SupplyGrade",
+        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 57500,
+        "commodities": [
+            "Aluminium"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "80 - 112 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_RefinedOre_Aluminium_Stanton_SupplyGrade1",
+        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 59500,
+        "commodities": [
+            "Aluminium"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "80 - 112 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_AToB_RefinedOre_Aluminium_Stanton1_SmallGrade",
         "displayTitle": "Rookie Rank - Direct Planetary Extra Small Cargo Haul",
         "location": "Hurston",
@@ -2708,44 +2934,44 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_RefinedOre_Aluminium_Stanton_SupplyGrade",
-        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "internalName": "HaulCargo_AToB_RefinedOre_Corundum_Stanton_SmallGrade",
+        "displayTitle": "Rookie Rank - Direct Solar Small Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 57500,
+        "reward": 40750,
         "commodities": [
-            "Aluminium"
+            "Corundum"
         ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "80 - 112 SCU",
+        "reputationRank": "Rookie",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "8 - 16 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
+        "cargoGrade": "Small",
+        "deadline": 300,
         "reputation": [
             {
-                "Success": 500
+                "Success": 50
             }
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_RefinedOre_Aluminium_Stanton_SupplyGrade1",
-        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "internalName": "HaulCargo_AToB_RefinedOre_Corundum_Stanton_SmallGrade1",
+        "displayTitle": "Rookie Rank - Direct Solar Small Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 59500,
+        "reward": 33250,
         "commodities": [
-            "Aluminium"
+            "Corundum"
         ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "80 - 112 SCU",
+        "reputationRank": "Rookie",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "8 - 16 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
+        "cargoGrade": "Small",
+        "deadline": 300,
         "reputation": [
             {
-                "Success": 500
+                "Success": 50
             }
         ]
     },
@@ -2834,48 +3060,6 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_RefinedOre_Corundum_Stanton_SmallGrade",
-        "displayTitle": "Rookie Rank - Direct Solar Small Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 40750,
-        "commodities": [
-            "Corundum"
-        ],
-        "reputationRank": "Rookie",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "8 - 16 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_RefinedOre_Corundum_Stanton_SmallGrade1",
-        "displayTitle": "Rookie Rank - Direct Solar Small Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 33250,
-        "commodities": [
-            "Corundum"
-        ],
-        "reputationRank": "Rookie",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "8 - 16 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
         "internalName": "HaulCargo_AToB_RefinedOre_Mixed_AluminiumTitanium_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
         "location": "no single location",
@@ -2888,29 +3072,6 @@
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
         "cargoAmount": "40 - 56 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
-        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 57750,
-        "commodities": [
-            "Aluminium",
-            "Tungsten",
-            "Corundum"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "33 - 39 SCU",
         "cargoRoute": "Solar",
         "cargoGrade": "Medium",
         "deadline": 360,
@@ -2965,6 +3126,29 @@
         ]
     },
     {
+        "internalName": "HaulCargo_AToB_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
+        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 57750,
+        "commodities": [
+            "Aluminium",
+            "Tungsten",
+            "Corundum"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "33 - 39 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_AToB_RefinedOre_Mixed_QuartzCorundum_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
         "location": "no single location",
@@ -2977,6 +3161,48 @@
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
         "cargoAmount": "66 - 80 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_RefinedOre_Quartz_Stanton_SupplyGrade",
+        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 55250,
+        "commodities": [
+            "Quartz"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "80 - 112 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_RefinedOre_Quartz_Stanton_SupplyGrade1",
+        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 55250,
+        "commodities": [
+            "Quartz"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "80 - 112 SCU",
         "cargoRoute": "Solar",
         "cargoGrade": "Medium",
         "deadline": 300,
@@ -3071,41 +3297,20 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_RefinedOre_Quartz_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_AToB_RefinedOre_Tin_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 55250,
+        "reward": 57750,
         "commodities": [
-            "Quartz"
+            "Tin"
         ],
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
         "cargoAmount": "80 - 112 SCU",
         "cargoRoute": "Solar",
         "cargoGrade": "Medium",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_RefinedOre_Quartz_Stanton_SupplyGrade1",
-        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 55250,
-        "commodities": [
-            "Quartz"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "80 - 112 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 300,
+        "deadline": 360,
         "reputation": [
             {
                 "Success": 500
@@ -3260,13 +3465,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_RefinedOre_Tin_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_AToB_RefinedOre_Titanium_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 57750,
+        "reward": 57500,
         "commodities": [
-            "Tin"
+            "Titanium"
         ],
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
@@ -3365,13 +3570,34 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_RefinedOre_Titanium_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_AToB_RefinedOre_Tungsten_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": true,
-        "reward": 57500,
+        "reward": 55750,
         "commodities": [
-            "Titanium"
+            "Tungsten"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "80 - 112 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_AToB_RefinedOre_Tungsten_Stanton_SupplyGrade1",
+        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 59500,
+        "commodities": [
+            "Tungsten"
         ],
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
@@ -3458,232 +3684,6 @@
             "Tungsten"
         ],
         "reputationRank": "Rookie",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_RefinedOre_Tungsten_Stanton_SupplyGrade",
-        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 55750,
-        "commodities": [
-            "Tungsten"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "80 - 112 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_RefinedOre_Tungsten_Stanton_SupplyGrade1",
-        "displayTitle": "Junior Rank - Direct Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 59500,
-        "commodities": [
-            "Tungsten"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "80 - 112 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton1_Intro",
-        "displayTitle": "Opportunity for Independent Cargo Hauler",
-        "location": "Hurston",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton1_ReHire",
-        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
-        "location": "Hurston",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton2_Intro",
-        "displayTitle": "Opportunity for Independent Cargo Hauler",
-        "location": "Crusader",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton2_ReHire",
-        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
-        "location": "Crusader",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton3_Intro",
-        "displayTitle": "Opportunity for Independent Cargo Hauler",
-        "location": "ArcCorp",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton3_ReHire",
-        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
-        "location": "ArcCorp",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton4_Intro",
-        "displayTitle": "Opportunity for Independent Cargo Hauler",
-        "location": "MicroTech",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "6 - 12 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_AToB_Stanton4_ReHire",
-        "displayTitle": "Covalex Cargo Hauling Re-evaluation",
-        "location": "MicroTech",
-        "isDirectRoute": true,
-        "reward": 50250,
-        "commodities": [
-            "A",
-            "To",
-            "B"
-        ],
-        "reputationRank": "Trainee",
         "maxSCUSize": "1 SCU",
         "cargoAmount": "6 - 12 SCU",
         "cargoRoute": "Planetary",
@@ -3999,6 +3999,27 @@
         ]
     },
     {
+        "internalName": "HaulCargo_AToB_Waste_Waste_Stanton_BulkGrade",
+        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": true,
+        "reward": 127250,
+        "commodities": [
+            "Waste"
+        ],
+        "reputationRank": "Experienced",
+        "maxSCUSize": "32 SCU",
+        "cargoAmount": "400 - 640 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Large",
+        "deadline": 420,
+        "reputation": [
+            {
+                "Success": 2000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_AToB_Waste_Waste_Interstellar_BulkGrade",
         "displayTitle": "Experienced Rank - Direct Interstellar Large Cargo Haul",
         "location": "no single location",
@@ -4188,23 +4209,24 @@
         ]
     },
     {
-        "internalName": "HaulCargo_AToB_Waste_Waste_Stanton_BulkGrade",
-        "displayTitle": "Experienced Rank - Direct Solar Large Cargo Haul",
+        "internalName": "HaulCargo_Multi2ToSingle_Processed_AgriculturalSupplies_Stanton_SmallGrade",
+        "displayTitle": "Junior Rank - Solar Small Cargo Haul",
         "location": "no single location",
-        "isDirectRoute": true,
-        "reward": 127250,
+        "isDirectRoute": false,
+        "reward": 57000,
         "commodities": [
-            "Waste"
+            "Agricultural",
+            "Supplies"
         ],
-        "reputationRank": "Experienced",
-        "maxSCUSize": "32 SCU",
-        "cargoAmount": "400 - 640 SCU",
+        "reputationRank": "Junior",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "4 - 8 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Large",
-        "deadline": 420,
+        "cargoGrade": "Small",
+        "deadline": 300,
         "reputation": [
             {
-                "Success": 2000
+                "Success": 500
             }
         ]
     },
@@ -4222,28 +4244,6 @@
         "maxSCUSize": "4 SCU",
         "cargoAmount": "4 - 8 SCU",
         "cargoRoute": "Planetary",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_Multi2ToSingle_Processed_AgriculturalSupplies_Stanton_SmallGrade",
-        "displayTitle": "Junior Rank - Solar Small Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 57000,
-        "commodities": [
-            "Agricultural",
-            "Supplies"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "4 - 8 SCU",
-        "cargoRoute": "Solar",
         "cargoGrade": "Small",
         "deadline": 300,
         "reputation": [
@@ -4340,6 +4340,28 @@
         ]
     },
     {
+        "internalName": "HaulCargo_Multi2ToSingle_RawOre_Mixed_IronCopper_Stanton1_SmallGrade",
+        "displayTitle": "Junior Rank - Planetary Small Cargo Haul",
+        "location": "Hurston",
+        "isDirectRoute": false,
+        "reward": 59750,
+        "commodities": [
+            "Iron",
+            "Copper"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "2 - 4 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_Multi2ToSingle_RawOre_Mixed_IronCopperQuartz_Stanton1_SmallGrade",
         "displayTitle": "Junior Rank - Planetary Small Cargo Haul",
         "location": "Hurston",
@@ -4376,28 +4398,6 @@
         "reputationRank": "Junior",
         "maxSCUSize": "4 SCU",
         "cargoAmount": "2 - 3 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_Multi2ToSingle_RawOre_Mixed_IronCopper_Stanton1_SmallGrade",
-        "displayTitle": "Junior Rank - Planetary Small Cargo Haul",
-        "location": "Hurston",
-        "isDirectRoute": false,
-        "reward": 59750,
-        "commodities": [
-            "Iron",
-            "Copper"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "2 - 4 SCU",
         "cargoRoute": "Planetary",
         "cargoGrade": "Small",
         "deadline": 300,
@@ -4628,6 +4628,27 @@
         ]
     },
     {
+        "internalName": "HaulCargo_Multi2ToSingle_Waste_Waste_Stanton_BulkGrade",
+        "displayTitle": "Experienced Rank - Solar Large Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 136500,
+        "commodities": [
+            "Waste"
+        ],
+        "reputationRank": "Experienced",
+        "maxSCUSize": "32 SCU",
+        "cargoAmount": "200 - 320 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Large",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 2000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_Multi2ToSingle_Waste_Waste_Stanton1_SmallGrade",
         "displayTitle": "Junior Rank - Planetary Extra Small Cargo Haul",
         "location": "Hurston",
@@ -4687,27 +4708,6 @@
         "reputation": [
             {
                 "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_Multi2ToSingle_Waste_Waste_Stanton_BulkGrade",
-        "displayTitle": "Experienced Rank - Solar Large Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 136500,
-        "commodities": [
-            "Waste"
-        ],
-        "reputationRank": "Experienced",
-        "maxSCUSize": "32 SCU",
-        "cargoAmount": "200 - 320 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Large",
-        "deadline": 480,
-        "reputation": [
-            {
-                "Success": 2000
             }
         ]
     },
@@ -4821,6 +4821,27 @@
         ]
     },
     {
+        "internalName": "HaulCargo_Multi3ToSingle_Waste_Waste_Stanton_BulkGrade",
+        "displayTitle": "Senior Rank - Solar Large Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 209500,
+        "commodities": [
+            "Waste"
+        ],
+        "reputationRank": "Senior",
+        "maxSCUSize": "32 SCU",
+        "cargoAmount": "133 - 213 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Large",
+        "deadline": 540,
+        "reputation": [
+            {
+                "Success": 4000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_Multi3ToSingle_Waste_Waste_Stanton1_SmallGrade",
         "displayTitle": "Junior Rank - Solar Small Cargo Haul",
         "location": "Hurston",
@@ -4901,27 +4922,6 @@
         "reputation": [
             {
                 "Success": 2000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_Multi3ToSingle_Waste_Waste_Stanton_BulkGrade",
-        "displayTitle": "Senior Rank - Solar Large Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 209500,
-        "commodities": [
-            "Waste"
-        ],
-        "reputationRank": "Senior",
-        "maxSCUSize": "32 SCU",
-        "cargoAmount": "133 - 213 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Large",
-        "deadline": 540,
-        "reputation": [
-            {
-                "Success": 4000
             }
         ]
     },
@@ -5123,6 +5123,27 @@
         ]
     },
     {
+        "internalName": "HaulCargo_SingleToMulti2_Gas_Hydrogen_Stanton_BulkGrade",
+        "displayTitle": "Experienced Rank - Solar Large Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 263750,
+        "commodities": [
+            "Hydrogen"
+        ],
+        "reputationRank": "Experienced",
+        "maxSCUSize": "32 SCU",
+        "cargoAmount": "512 - 1.408 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Large",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 2000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_SingleToMulti2_Gas_Hydrogen_Stanton2_SmallGrade",
         "displayTitle": "Rookie Rank - Planetary Small Cargo Haul",
         "location": "Crusader",
@@ -5165,23 +5186,23 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti2_Gas_Hydrogen_Stanton_BulkGrade",
-        "displayTitle": "Experienced Rank - Solar Large Cargo Haul",
+        "internalName": "HaulCargo_SingleToMulti2_NonMetal_Carbon_Stanton_SmallGrade",
+        "displayTitle": "Rookie Rank - Solar Extra Small Cargo Haul",
         "location": "no single location",
         "isDirectRoute": false,
-        "reward": 263750,
+        "reward": 63250,
         "commodities": [
-            "Hydrogen"
+            "Carbon"
         ],
-        "reputationRank": "Experienced",
-        "maxSCUSize": "32 SCU",
-        "cargoAmount": "512 - 1.408 SCU",
+        "reputationRank": "Rookie",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "3 - 6 SCU",
         "cargoRoute": "Solar",
-        "cargoGrade": "Large",
+        "cargoGrade": "Extra Small",
         "deadline": 360,
         "reputation": [
             {
-                "Success": 2000
+                "Success": 50
             }
         ]
     },
@@ -5221,27 +5242,6 @@
         "cargoRoute": "Planetary",
         "cargoGrade": "Extra Small",
         "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti2_NonMetal_Carbon_Stanton_SmallGrade",
-        "displayTitle": "Rookie Rank - Solar Extra Small Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 63250,
-        "commodities": [
-            "Carbon"
-        ],
-        "reputationRank": "Rookie",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "3 - 6 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Extra Small",
-        "deadline": 360,
         "reputation": [
             {
                 "Success": 50
@@ -6093,48 +6093,6 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Aluminium_Stanton1_SmallGrade",
-        "displayTitle": "Rookie Rank - Planetary Extra Small Cargo Haul",
-        "location": "Hurston",
-        "isDirectRoute": false,
-        "reward": 61500,
-        "commodities": [
-            "Aluminium"
-        ],
-        "reputationRank": "Rookie",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "3 - 6 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Aluminium_Stanton4_SmallGrade",
-        "displayTitle": "Rookie Rank - Planetary Extra Small Cargo Haul",
-        "location": "MicroTech",
-        "isDirectRoute": false,
-        "reward": 61500,
-        "commodities": [
-            "Aluminium"
-        ],
-        "reputationRank": "Rookie",
-        "maxSCUSize": "1 SCU",
-        "cargoAmount": "3 - 6 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Extra Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 50
-            }
-        ]
-    },
-    {
         "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Aluminium_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -6177,13 +6135,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Corundum_Stanton1_SmallGrade",
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Aluminium_Stanton1_SmallGrade",
         "displayTitle": "Rookie Rank - Planetary Extra Small Cargo Haul",
         "location": "Hurston",
         "isDirectRoute": false,
         "reward": 61500,
         "commodities": [
-            "Corundum"
+            "Aluminium"
         ],
         "reputationRank": "Rookie",
         "maxSCUSize": "1 SCU",
@@ -6198,13 +6156,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Corundum_Stanton4_SmallGrade",
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Aluminium_Stanton4_SmallGrade",
         "displayTitle": "Rookie Rank - Planetary Extra Small Cargo Haul",
         "location": "MicroTech",
         "isDirectRoute": false,
         "reward": 61500,
         "commodities": [
-            "Corundum"
+            "Aluminium"
         ],
         "reputationRank": "Rookie",
         "maxSCUSize": "1 SCU",
@@ -6261,6 +6219,48 @@
         ]
     },
     {
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Corundum_Stanton1_SmallGrade",
+        "displayTitle": "Rookie Rank - Planetary Extra Small Cargo Haul",
+        "location": "Hurston",
+        "isDirectRoute": false,
+        "reward": 61500,
+        "commodities": [
+            "Corundum"
+        ],
+        "reputationRank": "Rookie",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "3 - 6 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Corundum_Stanton4_SmallGrade",
+        "displayTitle": "Rookie Rank - Planetary Extra Small Cargo Haul",
+        "location": "MicroTech",
+        "isDirectRoute": false,
+        "reward": 61500,
+        "commodities": [
+            "Corundum"
+        ],
+        "reputationRank": "Rookie",
+        "maxSCUSize": "1 SCU",
+        "cargoAmount": "3 - 6 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Extra Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 50
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Mixed_AluminiumTitanium_Stanton_SupplyGrade",
         "displayTitle": "Member Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -6273,29 +6273,6 @@
         "reputationRank": "Member",
         "maxSCUSize": "8 SCU",
         "cargoAmount": "20 - 28 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 1000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
-        "displayTitle": "Member Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 77750,
-        "commodities": [
-            "Aluminium",
-            "Tungsten",
-            "Corundum"
-        ],
-        "reputationRank": "Member",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "17 - 19 SCU",
         "cargoRoute": "Solar",
         "cargoGrade": "Medium",
         "deadline": 360,
@@ -6350,6 +6327,29 @@
         ]
     },
     {
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
+        "displayTitle": "Member Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 77750,
+        "commodities": [
+            "Aluminium",
+            "Tungsten",
+            "Corundum"
+        ],
+        "reputationRank": "Member",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "17 - 19 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 1000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Mixed_QuartzCorundum_Stanton_SupplyGrade",
         "displayTitle": "Member Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -6368,6 +6368,48 @@
         "reputation": [
             {
                 "Success": 1000
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Quartz_Stanton_SupplyGrade",
+        "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 64500,
+        "commodities": [
+            "Quartz"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "40 - 56 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Quartz_Stanton_SupplyGrade1",
+        "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 68250,
+        "commodities": [
+            "Quartz"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "40 - 56 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 500
             }
         ]
     },
@@ -6414,34 +6456,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Quartz_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Tin_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": false,
-        "reward": 64500,
+        "reward": 69250,
         "commodities": [
-            "Quartz"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "40 - 56 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Quartz_Stanton_SupplyGrade1",
-        "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 68250,
-        "commodities": [
-            "Quartz"
+            "Tin"
         ],
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
@@ -6498,13 +6519,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Tin_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Titanium_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": false,
-        "reward": 69250,
+        "reward": 66750,
         "commodities": [
-            "Tin"
+            "Titanium"
         ],
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
@@ -6561,13 +6582,34 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Titanium_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Tungsten_Stanton_SupplyGrade",
         "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": false,
-        "reward": 66750,
+        "reward": 64000,
         "commodities": [
-            "Titanium"
+            "Tungsten"
+        ],
+        "reputationRank": "Junior",
+        "maxSCUSize": "8 SCU",
+        "cargoAmount": "40 - 56 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 500
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Tungsten_Stanton_SupplyGrade1",
+        "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 66000,
+        "commodities": [
+            "Tungsten"
         ],
         "reputationRank": "Junior",
         "maxSCUSize": "8 SCU",
@@ -6620,48 +6662,6 @@
         "reputation": [
             {
                 "Success": 50
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Tungsten_Stanton_SupplyGrade",
-        "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 64000,
-        "commodities": [
-            "Tungsten"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "40 - 56 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 500
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti2_RefinedOre_Tungsten_Stanton_SupplyGrade1",
-        "displayTitle": "Junior Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 66000,
-        "commodities": [
-            "Tungsten"
-        ],
-        "reputationRank": "Junior",
-        "maxSCUSize": "8 SCU",
-        "cargoAmount": "40 - 56 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 500
             }
         ]
     },
@@ -7337,48 +7337,6 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Aluminium_Stanton1_SmallGrade",
-        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
-        "location": "Hurston",
-        "isDirectRoute": false,
-        "reward": 99500,
-        "commodities": [
-            "Aluminium"
-        ],
-        "reputationRank": "Member",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "5 - 11 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 1000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Aluminium_Stanton4_SmallGrade",
-        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
-        "location": "MicroTech",
-        "isDirectRoute": false,
-        "reward": 99500,
-        "commodities": [
-            "Aluminium"
-        ],
-        "reputationRank": "Member",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "5 - 11 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Small",
-        "deadline": 300,
-        "reputation": [
-            {
-                "Success": 1000
-            }
-        ]
-    },
-    {
         "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Aluminium_Stanton_SupplyGrade",
         "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -7421,17 +7379,17 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Corundum_Stanton1_SmallGrade",
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Aluminium_Stanton1_SmallGrade",
         "displayTitle": "Member Rank - Planetary Small Cargo Haul",
         "location": "Hurston",
         "isDirectRoute": false,
-        "reward": 90250,
+        "reward": 99500,
         "commodities": [
-            "Corundum"
+            "Aluminium"
         ],
         "reputationRank": "Member",
         "maxSCUSize": "4 SCU",
-        "cargoAmount": "3 - 5 SCU",
+        "cargoAmount": "5 - 11 SCU",
         "cargoRoute": "Planetary",
         "cargoGrade": "Small",
         "deadline": 300,
@@ -7442,17 +7400,17 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Corundum_Stanton4_SmallGrade",
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Aluminium_Stanton4_SmallGrade",
         "displayTitle": "Member Rank - Planetary Small Cargo Haul",
         "location": "MicroTech",
         "isDirectRoute": false,
-        "reward": 90250,
+        "reward": 99500,
         "commodities": [
-            "Corundum"
+            "Aluminium"
         ],
         "reputationRank": "Member",
         "maxSCUSize": "4 SCU",
-        "cargoAmount": "3 - 5 SCU",
+        "cargoAmount": "5 - 11 SCU",
         "cargoRoute": "Planetary",
         "cargoGrade": "Small",
         "deadline": 300,
@@ -7505,6 +7463,48 @@
         ]
     },
     {
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Corundum_Stanton1_SmallGrade",
+        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
+        "location": "Hurston",
+        "isDirectRoute": false,
+        "reward": 90250,
+        "commodities": [
+            "Corundum"
+        ],
+        "reputationRank": "Member",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "3 - 5 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 1000
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Corundum_Stanton4_SmallGrade",
+        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
+        "location": "MicroTech",
+        "isDirectRoute": false,
+        "reward": 90250,
+        "commodities": [
+            "Corundum"
+        ],
+        "reputationRank": "Member",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "3 - 5 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 1000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Mixed_AluminiumTitanium_Stanton_SupplyGrade",
         "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -7517,29 +7517,6 @@
         "reputationRank": "Senior",
         "maxSCUSize": "16 SCU",
         "cargoAmount": "61 - 108 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 480,
-        "reputation": [
-            {
-                "Success": 4000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
-        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 339500,
-        "commodities": [
-            "Aluminium",
-            "Tungsten",
-            "Corundum"
-        ],
-        "reputationRank": "Senior",
-        "maxSCUSize": "16 SCU",
-        "cargoAmount": "57 - 100 SCU",
         "cargoRoute": "Solar",
         "cargoGrade": "Medium",
         "deadline": 480,
@@ -7594,6 +7571,29 @@
         ]
     },
     {
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
+        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 339500,
+        "commodities": [
+            "Aluminium",
+            "Tungsten",
+            "Corundum"
+        ],
+        "reputationRank": "Senior",
+        "maxSCUSize": "16 SCU",
+        "cargoAmount": "57 - 100 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 4000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Mixed_QuartzCorundum_Stanton_SupplyGrade",
         "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -7606,6 +7606,48 @@
         "reputationRank": "Senior",
         "maxSCUSize": "16 SCU",
         "cargoAmount": "115 - 200 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 4000
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Quartz_Stanton_SupplyGrade",
+        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 280250,
+        "commodities": [
+            "Quartz"
+        ],
+        "reputationRank": "Senior",
+        "maxSCUSize": "16 SCU",
+        "cargoAmount": "81 - 144 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 4000
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Quartz_Stanton_SupplyGrade1",
+        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 278000,
+        "commodities": [
+            "Quartz"
+        ],
+        "reputationRank": "Senior",
+        "maxSCUSize": "16 SCU",
+        "cargoAmount": "81 - 144 SCU",
         "cargoRoute": "Solar",
         "cargoGrade": "Medium",
         "deadline": 480,
@@ -7658,34 +7700,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Quartz_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Tin_Stanton_SupplyGrade",
         "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": false,
-        "reward": 280250,
+        "reward": 289000,
         "commodities": [
-            "Quartz"
-        ],
-        "reputationRank": "Senior",
-        "maxSCUSize": "16 SCU",
-        "cargoAmount": "81 - 144 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 480,
-        "reputation": [
-            {
-                "Success": 4000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Quartz_Stanton_SupplyGrade1",
-        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 278000,
-        "commodities": [
-            "Quartz"
+            "Tin"
         ],
         "reputationRank": "Senior",
         "maxSCUSize": "16 SCU",
@@ -7721,13 +7742,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Tin_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Titanium_Stanton_SupplyGrade",
         "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": false,
-        "reward": 289000,
+        "reward": 276250,
         "commodities": [
-            "Tin"
+            "Titanium"
         ],
         "reputationRank": "Senior",
         "maxSCUSize": "16 SCU",
@@ -7784,13 +7805,34 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Titanium_Stanton_SupplyGrade",
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Tungsten_Stanton_SupplyGrade",
         "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
         "isDirectRoute": false,
-        "reward": 276250,
+        "reward": 282500,
         "commodities": [
-            "Titanium"
+            "Tungsten"
+        ],
+        "reputationRank": "Senior",
+        "maxSCUSize": "16 SCU",
+        "cargoAmount": "81 - 144 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 4000
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Tungsten_Stanton_SupplyGrade1",
+        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 277750,
+        "commodities": [
+            "Tungsten"
         ],
         "reputationRank": "Senior",
         "maxSCUSize": "16 SCU",
@@ -7843,48 +7885,6 @@
         "reputation": [
             {
                 "Success": 1000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Tungsten_Stanton_SupplyGrade",
-        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 282500,
-        "commodities": [
-            "Tungsten"
-        ],
-        "reputationRank": "Senior",
-        "maxSCUSize": "16 SCU",
-        "cargoAmount": "81 - 144 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 480,
-        "reputation": [
-            {
-                "Success": 4000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti3_RefinedOre_Tungsten_Stanton_SupplyGrade1",
-        "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 277750,
-        "commodities": [
-            "Tungsten"
-        ],
-        "reputationRank": "Senior",
-        "maxSCUSize": "16 SCU",
-        "cargoAmount": "81 - 144 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 480,
-        "reputation": [
-            {
-                "Success": 4000
             }
         ]
     },
@@ -8454,27 +8454,6 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Aluminium_Stanton1_SmallGrade",
-        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
-        "location": "Hurston",
-        "isDirectRoute": false,
-        "reward": 101000,
-        "commodities": [
-            "Aluminium"
-        ],
-        "reputationRank": "Member",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "4 - 8 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Small",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 1000
-            }
-        ]
-    },
-    {
         "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Aluminium_Stanton_SupplyGrade",
         "displayTitle": "Senior Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -8517,20 +8496,20 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Corundum_Stanton1_SmallGrade",
+        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Aluminium_Stanton1_SmallGrade",
         "displayTitle": "Member Rank - Planetary Small Cargo Haul",
         "location": "Hurston",
         "isDirectRoute": false,
-        "reward": 90750,
+        "reward": 101000,
         "commodities": [
-            "Corundum"
+            "Aluminium"
         ],
         "reputationRank": "Member",
         "maxSCUSize": "4 SCU",
-        "cargoAmount": "2 - 4 SCU",
+        "cargoAmount": "4 - 8 SCU",
         "cargoRoute": "Planetary",
         "cargoGrade": "Small",
-        "deadline": 300,
+        "deadline": 360,
         "reputation": [
             {
                 "Success": 1000
@@ -8580,6 +8559,27 @@
         ]
     },
     {
+        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Corundum_Stanton1_SmallGrade",
+        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
+        "location": "Hurston",
+        "isDirectRoute": false,
+        "reward": 90750,
+        "commodities": [
+            "Corundum"
+        ],
+        "reputationRank": "Member",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "2 - 4 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Small",
+        "deadline": 300,
+        "reputation": [
+            {
+                "Success": 1000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Mixed_AluminiumTitanium_Stanton_SupplyGrade",
         "displayTitle": "Master Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -8592,29 +8592,6 @@
         "reputationRank": "Master",
         "maxSCUSize": "16 SCU",
         "cargoAmount": "61 - 108 SCU",
-        "cargoRoute": "Solar",
-        "cargoGrade": "Medium",
-        "deadline": 480,
-        "reputation": [
-            {
-                "Success": 8000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
-        "displayTitle": "Master Rank - Solar Medium Cargo Haul",
-        "location": "no single location",
-        "isDirectRoute": false,
-        "reward": 387000,
-        "commodities": [
-            "Aluminium",
-            "Tungsten",
-            "Corundum"
-        ],
-        "reputationRank": "Master",
-        "maxSCUSize": "16 SCU",
-        "cargoAmount": "57 - 100 SCU",
         "cargoRoute": "Solar",
         "cargoGrade": "Medium",
         "deadline": 480,
@@ -8669,6 +8646,29 @@
         ]
     },
     {
+        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Mixed_AluminiumTungstenCorundum_Stanton_SupplyGrade",
+        "displayTitle": "Master Rank - Solar Medium Cargo Haul",
+        "location": "no single location",
+        "isDirectRoute": false,
+        "reward": 387000,
+        "commodities": [
+            "Aluminium",
+            "Tungsten",
+            "Corundum"
+        ],
+        "reputationRank": "Master",
+        "maxSCUSize": "16 SCU",
+        "cargoAmount": "57 - 100 SCU",
+        "cargoRoute": "Solar",
+        "cargoGrade": "Medium",
+        "deadline": 480,
+        "reputation": [
+            {
+                "Success": 8000
+            }
+        ]
+    },
+    {
         "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Mixed_QuartzCorundum_Stanton_SupplyGrade",
         "displayTitle": "Master Rank - Solar Medium Cargo Haul",
         "location": "no single location",
@@ -8687,27 +8687,6 @@
         "reputation": [
             {
                 "Success": 8000
-            }
-        ]
-    },
-    {
-        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Quartz_Stanton1_SmallGrade",
-        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
-        "location": "Hurston",
-        "isDirectRoute": false,
-        "reward": 101000,
-        "commodities": [
-            "Quartz"
-        ],
-        "reputationRank": "Member",
-        "maxSCUSize": "4 SCU",
-        "cargoAmount": "4 - 8 SCU",
-        "cargoRoute": "Planetary",
-        "cargoGrade": "Small",
-        "deadline": 360,
-        "reputation": [
-            {
-                "Success": 1000
             }
         ]
     },
@@ -8754,13 +8733,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Titanium_Stanton1_SmallGrade",
+        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Quartz_Stanton1_SmallGrade",
         "displayTitle": "Member Rank - Planetary Small Cargo Haul",
         "location": "Hurston",
         "isDirectRoute": false,
         "reward": 101000,
         "commodities": [
-            "Titanium"
+            "Quartz"
         ],
         "reputationRank": "Member",
         "maxSCUSize": "4 SCU",
@@ -8796,13 +8775,13 @@
         ]
     },
     {
-        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Tungsten_Stanton1_SmallGrade",
+        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Titanium_Stanton1_SmallGrade",
         "displayTitle": "Member Rank - Planetary Small Cargo Haul",
         "location": "Hurston",
         "isDirectRoute": false,
         "reward": 101000,
         "commodities": [
-            "Tungsten"
+            "Titanium"
         ],
         "reputationRank": "Member",
         "maxSCUSize": "4 SCU",
@@ -8855,6 +8834,27 @@
         "reputation": [
             {
                 "Success": 4000
+            }
+        ]
+    },
+    {
+        "internalName": "HaulCargo_SingleToMulti4_RefinedOre_Tungsten_Stanton1_SmallGrade",
+        "displayTitle": "Member Rank - Planetary Small Cargo Haul",
+        "location": "Hurston",
+        "isDirectRoute": false,
+        "reward": 101000,
+        "commodities": [
+            "Tungsten"
+        ],
+        "reputationRank": "Member",
+        "maxSCUSize": "4 SCU",
+        "cargoAmount": "4 - 8 SCU",
+        "cargoRoute": "Planetary",
+        "cargoGrade": "Small",
+        "deadline": 360,
+        "reputation": [
+            {
+                "Success": 1000
             }
         ]
     }
