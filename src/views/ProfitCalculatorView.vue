@@ -17,7 +17,7 @@
         type="checkbox"
         v-model="includeServiceFee"
       />
-      <label for="includeFee"> Include Service Fee (0.5%)</label>
+      <label for="includeFee" title="deducts the service you pay per transaction"> Include Service Fee (0.5%)</label>
     </div>
     <div class="even-split">
       <input
@@ -66,17 +66,6 @@
     <div class="buttons">
       <button @click="addParticipant">Add Participant</button>
       <button @click="calculateProfit">Calculate Profit</button>
-    </div>
-    <div class="input-area">
-      <label for="bulkInput">Bulk Input:</label>
-      <textarea
-        id="bulkInput"
-        v-model="bulkInput"
-        placeholder="Paste your data here"
-        rows="10"
-        cols="50"
-      ></textarea>
-      <button @click="processBulkInput">Process Input</button>
     </div>
   </div>
 </template>
@@ -156,29 +145,6 @@ const updateTotalProfit = (event) => {
   const numericValue = parseInt(rawValue, 10) || 0;
   totalProfit.value = numericValue;
   formattedTotalProfit.value = numericValue.toLocaleString('de-DE'); // Format with thousand separator
-};
-
-const bulkInput = ref('');
-
-const processBulkInput = () => {
-  if (!bulkInput.value) {
-    return; // Exit if input is empty
-  }
-
-  const lines = bulkInput.value.split('\n'); // Split input into lines
-  participants.length = 0; // Clear existing participants
-  lines.forEach((line) => {
-    const parts = line.split('|').map((part) => part.trim()); // Split by '|' and trim whitespace
-    if (parts.length > 1) {
-      const name = parts[0]; // First field as name
-      const duration = parts[parts.length - 1].replace('DUR:', '').trim(); // Last field as time, remove "DUR:"
-      participants.push({ name, time: duration, profit: 0 });
-    }
-  });
-
-  setTimeout(() => {
-    bulkInput.value = '';
-  }, 250);
 };
 </script>
 

@@ -60,8 +60,7 @@ export default {
         .filter(item =>
           item.price_sell > 0 &&
           item.id_category === 18 &&
-          !item.item_name.includes("'") &&
-          !item.item_name.includes("\"") &&
+          !item.item_name.includes("&quot;") &&
           !excludedItems.some(excluded => item.item_name.includes(excluded))
         )
         .reduce((acc, item) => {
