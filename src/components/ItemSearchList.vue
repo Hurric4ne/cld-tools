@@ -8,7 +8,7 @@
       <li v-for="item in filteredItems" :key="item.id" class="item">
         <label>
           <input type="checkbox" v-model="selectedItems" :value="item.item_name" />
-          {{ item.item_name }}
+          <span v-html="item.item_name"></span>
         </label>
       </li>
       <p v-if="!filteredItems.length">No items found.</p>

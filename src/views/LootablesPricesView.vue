@@ -4,7 +4,7 @@
     <h2 @click="toggleCollapse">FPS Weapons <span class="collapse-icon" :class="{'is-collapsed': isCollapsed}">&#10148;</span></h2>
     <div class="item-list" v-show="!isCollapsed">
       <div class="item" v-for="item in allSellableItems" :key="item.id">
-        <h3>{{ item.item_name }}</h3>
+        <h3 v-html="item.item_name"></h3>
         <p class="item-prices">Median Price: <span>{{ Math.round(item.price_sell).toLocaleString() }} aUEC</span>
         Volume: <span>{{ item.volume.toLocaleString() }} &micro;SCU</span></p>
         <p>Price per Volume: <span>{{ item.pricePerVolume.toLocaleString() }}</span></p>
@@ -60,7 +60,6 @@ export default {
         .filter(item =>
           item.price_sell > 0 &&
           item.id_category === 18 &&
-          !item.item_name.includes("&quot;") &&
           !excludedItems.some(excluded => item.item_name.includes(excluded))
         )
         .reduce((acc, item) => {
