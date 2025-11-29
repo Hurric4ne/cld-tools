@@ -13,8 +13,9 @@
       </thead>
       <tbody>
         <tr v-for="(item, index) in selectedItems" :key="index">
-          <td>{{ item.item_name }}</td>
+          <td v-html="item.item_name"></td>
           <td>
+            <span class="total-entries">{{ totalLocationsForItem(item.item_name) }} Location{{ totalLocationsForItem(item.item_name) > 1 ? 's' : '' }}</span>
             <select v-model="selectedLocations[index]">
               <option value="">All Locations</option>
               <option v-for="(location, locIndex) in getLocationsForItem(item.item_name)" :key="locIndex"
@@ -24,11 +25,10 @@
             </select>
           </td>
           <td>
+            <span class="total-entries">{{ totalTerminalsForItem(item.item_name, selectedLocations[index]) }} Terminal{{ totalTerminalsForItem(item.item_name, selectedLocations[index]) > 1 ? 's' : '' }}</span>
             <select v-model="selectedTerminals[index]">
               <option v-for="(terminal, termIndex) in getTerminalsForItem(item.item_name, selectedLocations[index])"
-                :key="termIndex" :value="terminal">
-                {{ terminal }}
-              </option>
+                :key="termIndex" :value="terminal" v-html="terminal"></option>
             </select>
           </td>
           <td>
@@ -82,20 +82,24 @@ export default {
         )
         .map((item) => {
           const terminal = props.terminals.find((term) => term.id === parseInt(item.id_terminal));
-          return terminal && (!selectedLocation || terminal.planet_name === selectedLocation) ? terminal.name : null;
+          return terminal && (!selectedLocation || terminal.orbit_name === selectedLocation) ? terminal.name : null;
         })
         .filter((terminal) => terminal !== null);
 
       return [...new Set(terminals)].sort((a, b) => a.localeCompare(b)); // Remove duplicates and sort alphabetically
     };
 
-    // Function to find all unique locations (planet_name) for terminals where the item can be bought
+    const totalTerminalsForItem = (itemName, selectedLocation) => {
+      return getTerminalsForItem(itemName, selectedLocation).length;
+    };
+
+    // Function to find all unique locations (orbit_name) for terminals where the item can be bought
     const getLocationsForItem = (itemName) => {
       const locations = props.items
         .filter((item) => item.item_name === itemName)
         .map((item) => {
           const terminal = props.terminals.find((term) => term.id === parseInt(item.id_terminal));
-          return terminal ? terminal.planet_name : null;
+          return terminal ? terminal.orbit_name : null;
         })
         .filter((location) => location !== null && location !== "");
 
@@ -106,6 +110,10 @@ export default {
       });
 
       return [...new Set(validLocations)].sort((a, b) => a.localeCompare(b)); // Remove duplicates and sort alphabetically
+    };
+
+    const totalLocationsForItem = (itemName) => {
+      return getLocationsForItem(itemName).length;
     };
 
     // Function to get the price of an item for a selected terminal
@@ -140,7 +148,9 @@ export default {
       selectedLocations,
       selectedTerminals,
       getTerminalsForItem,
+      totalTerminalsForItem,
       getLocationsForItem,
+      totalLocationsForItem,
       getPriceForItem,
       getTotalCost,
       formatNumber,
@@ -173,6 +183,12 @@ td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ccc;
+}
+
+.total-entries {
+  display: block;
+  font-size: 0.8rem;
+  padding-bottom: 5px;
 }
 
 select, input {

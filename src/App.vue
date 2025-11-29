@@ -2,7 +2,7 @@
   <div>
     <nav>
       <button @click="currentView = 'ShoppingView'">Shopping-List</button>
-      <button @click="currentView = 'CargoMissionView'">Cargo-Missions</button>
+      <button @click="currentView = 'CargoMissionView'" disabled>Cargo-Missions (out-of-date)</button>
       <button @click="currentView = 'ProfitCalculatorView'">Profit Calculator</button>
       <button @click="currentView = 'LootablePricesView'">Lootable Item Prices</button>
     </nav>
@@ -167,11 +167,17 @@ nav {
     margin: 0 10px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--color-red);
       color: var(--color-white);
     }
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: default;
   }
 }
 

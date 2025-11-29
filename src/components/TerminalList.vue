@@ -10,9 +10,7 @@
           item{{ terminal.items.length > 1 ? 's' : '' }})
         </strong>
         <ul>
-          <li class="item" v-for="item in terminal.items" :key="item.item_name">
-            {{ item.item_name }}
-          </li>
+          <li class="item" v-for="item in terminal.items" :key="item.item_name" v-html="item.item_name"></li>
         </ul>
       </li>
     </ul>
