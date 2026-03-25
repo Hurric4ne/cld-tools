@@ -2,20 +2,16 @@
   <div>
     <nav>
       <button @click="currentView = 'ShoppingView'" :class="{ 'is-active': currentView === 'ShoppingView' }">Shopping-List</button>
-      <button @click="currentView = 'BlueprintsView'" :class="{ 'is-active': currentView === 'BlueprintsView' }">Blueprints (soon)</button>
-      <!-- <button @click="currentView = 'CargoMissionView'" disabled>Cargo-Missions (out-of-date)</button> -->
+      <button @click="currentView = 'GlobaliniView'" :class="{ 'is-active': currentView === 'GlobaliniView' }">global.ini generator (experimental)</button>
       <button @click="currentView = 'ProfitCalculatorView'" :class="{ 'is-active': currentView === 'ProfitCalculatorView' }">Profit Calculator</button>
       <button @click="currentView = 'LootablePricesView'" :class="{ 'is-active': currentView === 'LootablePricesView' }">Lootable Item Prices</button>
     </nav>
     <section v-if="currentView === 'ShoppingView'">
       <ShoppingView :items="items" :terminals="terminals" :isLoading="isLoading" />
     </section>
-    <section v-if="currentView === 'BlueprintsView'">
-      <BlueprintsView :items="items" :terminals="terminals" :isLoading="isLoading" />
+    <section v-if="currentView === 'GlobaliniView'">
+      <GlobaliniView />
     </section>
-    <!-- <section v-if="currentView === 'CargoMissionView'">
-      <CargoMissionView />
-    </section> -->
     <section v-if="currentView === 'LootablePricesView'">
       <LootablesPricesView :items="farmItems" :commodities="commodities" />
     </section>
@@ -31,12 +27,12 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import ShoppingView from '@/views/ShoppingView.vue';
-import BlueprintsView from '@/views/BlueprintsView.vue';
+import GlobaliniView from '@/views/GlobaliniView.vue';
 // import CargoMissionView from '@/views/CargoMissionView.vue';
 import LootablesPricesView from '@/views/LootablesPricesView.vue';
 import ProfitCalculatorView from '@/views/ProfitCalculatorView.vue';
 
-const currentView = ref('BlueprintsView');
+const currentView = ref('GlobaliniView');
 
 // Reactive data states
 const items = ref([]);
