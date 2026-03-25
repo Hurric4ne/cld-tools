@@ -32,7 +32,7 @@ import GlobaliniView from '@/views/GlobaliniView.vue';
 import LootablesPricesView from '@/views/LootablesPricesView.vue';
 import ProfitCalculatorView from '@/views/ProfitCalculatorView.vue';
 
-const currentView = ref('GlobaliniView');
+const currentView = ref('ShoppingView');
 
 // Reactive data states
 const items = ref([]);
