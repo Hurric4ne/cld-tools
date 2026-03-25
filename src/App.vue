@@ -4,16 +4,12 @@
       <button @click="currentView = 'ShoppingView'" :class="{ 'is-active': currentView === 'ShoppingView' }">Shopping-List</button>
       <button @click="currentView = 'GlobaliniView'" :class="{ 'is-active': currentView === 'GlobaliniView' }">global.ini generator (experimental)</button>
       <button @click="currentView = 'ProfitCalculatorView'" :class="{ 'is-active': currentView === 'ProfitCalculatorView' }">Profit Calculator</button>
-      <button @click="currentView = 'LootablePricesView'" :class="{ 'is-active': currentView === 'LootablePricesView' }">Lootable Item Prices</button>
     </nav>
     <section v-if="currentView === 'ShoppingView'">
       <ShoppingView :items="items" :terminals="terminals" :isLoading="isLoading" />
     </section>
     <section v-if="currentView === 'GlobaliniView'">
       <GlobaliniView />
-    </section>
-    <section v-if="currentView === 'LootablePricesView'">
-      <LootablesPricesView :items="farmItems" :commodities="commodities" />
     </section>
     <section v-if="currentView === 'ProfitCalculatorView'">
       <ProfitCalculatorView />
@@ -28,8 +24,6 @@
 import { ref, onMounted } from 'vue';
 import ShoppingView from '@/views/ShoppingView.vue';
 import GlobaliniView from '@/views/GlobaliniView.vue';
-// import CargoMissionView from '@/views/CargoMissionView.vue';
-import LootablesPricesView from '@/views/LootablesPricesView.vue';
 import ProfitCalculatorView from '@/views/ProfitCalculatorView.vue';
 
 const currentView = ref('ShoppingView');
@@ -141,12 +135,16 @@ onMounted(async () => {
   --max-width: 1200px;
 }
 
+html {
+  font-size: 20px;
+}
+
 body {
   position: relative;
   width: calc(100vw - 20px);
   max-width: 1242px;
   margin: 0 auto;
-  font-family: 'Orbitron', serif;
+  font-family: 'Ubuntu Mono', monospace;
   font-optical-sizing: auto;
   letter-spacing: 1px;
   font-weight: 400;

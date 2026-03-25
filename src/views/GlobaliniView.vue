@@ -62,11 +62,11 @@ export default {
     },
     setup() {
       const options = {
-        'prefixed_components_minimal': 'Minimal Components prefixed (Military + Stealth, Size 1-3, Grade A+B) <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <strong>[M1A]</strong> VK-00',
-        'prefixed_components_full': 'All Components prefixed (by joeydee1986/BeltaKoda on GitHub) <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <strong>R2A</strong> LuxCore',
-        'prefixed_armaments': 'prefixed Missiles, Torpedoes and Bombs (by joeydee1986/BeltaKoda on GitHub) <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <strong>EM</strong> Seeker IX Torpedo, <strong>B10</strong> Colossus',
-        'prefixed_items_bp': 'prefixed Items with a Blueprint (Item can be dismantled)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> P4-AR Rifle <strong>(BP)</strong>',
-        'shortened_names': 'shortened "Hephaestanite (Raw) to prevent overlapping Quality" <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <strong>"Hephae. (Raw)"</strong>'
+        'prefixed_components_minimal': 'Minimal Components prefixed (Military + Stealth, Size 1-3, Grade A+B) <br/>&nbsp;&nbsp;&nbsp;=> <strong>[M1A]</strong> VK-00',
+        'prefixed_components_full': 'All Components prefixed (by joeydee1986/BeltaKoda on GitHub) <br/>&nbsp;&nbsp;&nbsp;=> <strong>R2A</strong> LuxCore',
+        'prefixed_armaments': 'prefixed Missiles, Torpedoes and Bombs (by joeydee1986/BeltaKoda on GitHub) <br/>&nbsp;&nbsp;&nbsp;=> <strong>EM</strong> Seeker IX Torpedo, <strong>B10</strong> Colossus',
+        'prefixed_items_bp': 'prefixed Items with a Blueprint (Item can be dismantled)<br/>&nbsp;&nbsp;&nbsp;=> P4-AR Rifle <strong>(BP)</strong>',
+        'shortened_names': 'shortened "Hephaestanite (Raw) to prevent overlapping Quality" <br/>&nbsp;&nbsp;&nbsp;=> <strong>"Hephae. (Raw)"</strong>'
       };
 
       const selected = ref([]);

@@ -187,7 +187,7 @@ td {
 
 .total-entries {
   display: block;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding-bottom: 5px;
 }
 
