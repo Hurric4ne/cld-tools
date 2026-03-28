@@ -27,7 +27,7 @@
           </label>
         </div>
 
-        <p class="loading-note">Note: depending on your selection, this may take a moment to generate.</p>
+        <p class="loading-note">Note: depending on your selection, this may take a moment to generate.<br/>Please wait until the Download Button is enabled.</p>
         <div class="actions-wrapper">
           <button
             class="generate-btn"
@@ -114,7 +114,11 @@ export default {
         selectedModifications.forEach((modification) => {
           for (const [key, value] of Object.entries(modification)) {
             const regex = new RegExp(`^${key}=.*$`, 'gm');
-            modifiedGlobalIni = modifiedGlobalIni.replace(regex, `${key}=${value}`);
+            const safeValue = String(value)
+              .replace(/\\/g, '\\\\')
+              .replace(/\r?\n/g, '\\n');
+
+            modifiedGlobalIni = modifiedGlobalIni.replace(regex, `${key}=${safeValue}`);
           }
         });
 
