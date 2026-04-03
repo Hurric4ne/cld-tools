@@ -1,6 +1,13 @@
 <template>
   <div>
     <h1 class="section-title">global.ini generator</h1>
+    <br>
+    <h3>Due to more talented people creating the same version of this tool, please refer to the following resources:
+      <a class="info-link" href="https://beltakoda.github.io/StarMeld/" target="_blank">StarMeld by BeltaKoda</a><br>
+      The tool in this page will still be available for use, but it won't be updated with new modifications.
+    </h3>
+
+    <br><br>
     <div>If you don't know how to implement this <strong>global.ini</strong>, here are some How-To's by CIG or MrKraken:<br/>
       <ul>
         <li>
